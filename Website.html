@@ -1,25 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BrainyBucks</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"> 
-    <!--using bootstrap for some css elements and a style sheet for others-->  
-    <link rel="stylesheet" href="styles.css">    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        * {
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .btn-primary {
+            background-color: #D5007F;
+            color: white;
+            border-radius: 8px;
+        }
+
+        .btn-outline-primary {
+            background-color: transparent;
+            color: #D5007F;
+            border: 1px solid #D5007F;
+            border-radius: 8px;
+        }
+
+        .footer {
+            background-color: #3f4dc7;
+        }
+
+        .footer-text {
+            color: white;
+            font-family: Montserrat;
+        }
+
+        .footer-text-light {
+            color: #9CA3AF;
+            font-family: Montserrat;
+        }
+
+        .heading {
+            font-family: Montserrat, sans-serif;
+            font-weight: bold;
+        }
+
+        .subheading {
+            font-family: Montserrat, sans-serif;
+            font-weight: normal;
+            font-size: 16px;
+        }
+    </style>
 </head>
 
-<!-- This is an experimental page created to test Bootstrap's capabilities and Node.js integration. Feel free to remove everything and start fresh. -->
-
-
 <body>
-    <header class="bg-dark text-white py-3">
-        <div class="container">
-            <h1 class="text-start">BrainyBucks</h1>
+    <!-- Fixed Header -->
+    <header class="header text-white py-3 fixed-top" style="background-color: #3f4dc7;">
+        <div class="container d-flex justify-content-start align-items-center">
+            <img src="logo.png" alt="BrainyBucks Logo" class="logo me-3" style="width: 40px; height: 40px;">
+            <h1 class="m-0 heading" style="font-size: 24px;">BrainyBucks</h1>
         </div>
     </header>
-    
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+
+    <!-- Navbar fixed below the header -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" style="top: 70px;">
         <div class="container">
             <a class="navbar-brand" href="#">Finance Hub</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -36,43 +80,79 @@
         </div>
     </nav>
 
-    
-    <section class="bg-success text-white text-center py-5">
-        <h2>Your Trusted Financial Partner</h2>
+    <!-- Main Content Section -->
+    <section class="container mt-5 pt-5 pb-5" style="padding-top: 100px; padding-bottom: 80px;">
+        <div class="row">
+            <!-- Left Content Section -->
+            <div class="col-md-6 d-flex align-items-center">
+                <div>
+                    <h2 class="heading text-dark" style="font-size: 48px;">Empowering Your Financial Future</h2>
+                    <p class="subheading text-muted" style="font-size: 20px; line-height: 1.5;">Start Building Your Financial Future Today with Expert Guidance and Innovative Tools.</p>
+                    <div class="d-flex mt-4">
+                        <button class="btn btn-primary me-3" style="width: 182px; height: 58px;">Start Investing</button>
+                        <button class="btn btn-outline-primary" style="width: 158px; height: 58px;">Learn More</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Content Section (Image) -->
+            <div class="col-md-6">
+                <img src="https://placehold.co/624x624" class="img-fluid" alt="Financial Image">
+            </div>
+        </div>
     </section>
 
-    
-    <div class="container my-5">
-        <div class="row text-center">
-            <div class="col-md-4">
-                <div class="card shadow-sm p-3">
-                    <h3>Investment Advice</h3>
-                    <p>Learn how we....</p>
+    <!-- Content Area 2 -->
+    <div class="main-content" style="margin-top: 150px;">
+        <section class="bg-success text-white text-center py-5">
+            <h2 class="heading">Your Trusted Financial Partner</h2>
+        </section>
+
+        <div class="container my-5">
+            <div class="row text-center">
+                <div class="col-md-4">
+                    <div class="card shadow-sm p-3">
+                        <h3 class="heading">Investment Advice</h3>
+                        <p class="subheading">Learn how we can help you invest smarter and achieve your financial goals.</p>
+                    </div>
                 </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card shadow-sm p-3">
-                    <h3>Financial Planning</h3>
-                    <p>Plan your financial future ...</p>
+                <div class="col-md-4">
+                    <div class="card shadow-sm p-3">
+                        <h3 class="heading">Financial Planning</h3>
+                        <p class="subheading">Plan your financial future with tailored advice and expert insights.</p>
+                    </div>
                 </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card shadow-sm p-3">
-                    <h3>Market Insights</h3>
-                    <p>Stay updated with...</p>
+                <div class="col-md-4">
+                    <div class="card shadow-sm p-3">
+                        <h3 class="heading">Market Insights</h3>
+                        <p class="subheading">Stay updated with the latest market trends and make informed decisions.</p>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-    <button id="redirectButton">Go to Localhost Page</button>
-    </body>
-    </html>
-    <footer class="bg-dark text-white text-center py-3">
-        <p>© 2025 Finance Hub. All rights reserved.</p>
+
+    <!-- Footer Section -->
+    <footer class="footer text-white py-3">
+        <div class="container d-flex justify-content-between">
+            <div class="d-flex align-items-center">
+                <img src="logo.png" alt="BrainyBucks Logo" class="logo me-3" style="width: 40px; height: 40px;">
+                <span class="footer-text" style="font-size: 16px;">BrainyBucks</span>
+            </div>
+            <div class="d-flex flex-column align-items-end">
+                <span class="footer-text" style="font-size: 14px;">Your trusted partner for financial success.</span>
+                <div class="d-flex">
+                    <span class="footer-text-light" style="font-size: 12px;">Investments | Banking | Insurance | Retirement</span>
+                </div>
+            </div>
+        </div>
+        <div class="container text-center mt-2">
+            <p class="footer-text-light" style="font-size: 14px;">© 2025 BrainyBucks. All rights reserved.</p>
+        </div>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="pagesize.js"></script>  <!--test script -->  
+    <script src="pagesize.js"></script>  <!-- Test Script -->
 </body>
 
 </html>
