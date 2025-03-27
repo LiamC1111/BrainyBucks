@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BrainyBucks</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        * {
+            font-family: 'Montserrat', sans-serif;
+        }
+        /* Fuchsia Color Scheme */
+        .primary-bg {
+            background: linear-gradient(135deg, #3f4dc7, #a04be1)
+        }
+        .primary-text {
+            color: #9B4D96;
+        }
+        .secondary-text {
+            color: #6B4C8D;
+        }
+        .btn-primary-custom {
+            background-color: #9B4D96;
+            border: none;
+        }
+        .btn-outline-primary-custom {
+            border-color: #9B4D96;
+            color: #9B4D96;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Fixed Header with Navbar -->
+    <header class="header primary-bg text-white py-3 fixed-top">
+        <div class="container d-flex justify-content-between align-items-center">
+            <div class="d-flex align-items-center">
+                <img src="Logos/logo2.png" alt="BrainyBucks Logo" class="logo me-3" style="width: 40px; height: 40px;">
+                <h1 class="m-0">BrainyBucks</h1>
+            </div>
+            <!-- Navbar -->
+            <nav class="navbar navbar-expand-lg navbar-dark ">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link text-white" href="#">Home</a></li>
+                        <li class="nav-item"><a class="nav-link text-white" href="#">About</a></li>
+                        <li class="nav-item"><a class="nav-link text-white" href="#">Services</a></li>
+                        <li class="nav-item"><a class="nav-link text-white" href="#">Contact</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
+<!-- This section fetches and displays all posts from the backend -->
+<section id="postsSection" class="container mt-5 pt-5 pb-5">
+    <h2 class="mb-4 text-center">All Posts</h2>
+    <ul class="list-group" id="postList"></ul>
+</section>
+
+
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js" crossorigin="anonymous"></script>
+
+
+<script>
+    // Fetch and display posts from the backend
+    function loadPosts() {
+        fetch('/api/posts')
+            .then(response => response.json())
+            .then(posts => {
+                const postList = document.getElementById('postList');
+                postList.innerHTML = ''; // Clear current list
+
+                posts.forEach(post => {
+                    const li = document.createElement('li');
+                    li.classList.add('list-group-item');
+                    li.innerHTML = `<strong>${post.title}</strong>: ${post.content}`;
+                    postList.appendChild(li);
+                });
+            })
+            .catch(err => console.error('Error fetching posts:', err));
+    }
+
+    // Load posts when the page loads
+    window.onload = loadPosts;
+</script>
+
+
+    <!-- Main Content Section -->
+    <section class="container mt-5 pt-5 pb-5" style="padding-top: 100px; padding-bottom: 80px;">
+        <div class="row">
+            <!-- Left Content Section -->
+            <div class="col-md-6 d-flex align-items-center">
+                <div>
+                    <h2 class="primary-text font-weight-bold" style="font-size: 48px;">We simplify financial stuff</h2>
+                    <p class="secondary-text" style="font-size: 20px; line-height: 1.5;">DIY Financial plan (it’s not hard!)</p>
+                    <button class="btn btn-primary-custom mt-4" style="width: 182px; height: 58px; border-radius: 8px;">Contact us now</button>
+                </div>
+            </div>
+            <!-- Right Content Section (Image) -->
+            <div class="col-md-6">
+                <img src="https://placehold.co/624x624" class="img-fluid" alt="Financial Image">
+            </div>
+        </div>
+    </section>
+<!-- Testimonial Section -->
+<div class="container py-5 position-relative">
+    <div class="row justify-content-center">
+        <div class="col-12 col-md-10 p-4" style="border: 2px solid #3f4dc7;">
+            <div class="row align-items-center">
+                <div class="col-md-9">
+                    <div class="row align-items-center">
+                        <div class="col-4 col-md-3 text-center">
+                            <img src="quote.svg" class="img-fluid" style="max-width: 100px; height: auto; " alt="Profile Image">
+
+                        </div>
+                        <div class="col-8 col-md-9">
+                            <p class="mt-3 fs-5">
+                                Most financial advice feels overwhelming and out of reach. I built BrainyBucks to give you clear, step-by-step guidance—so managing money feels doable, not stressful.
+                            </p>
+                            <h4 class="mt-4">Hae Chung</h4>
+                            <p class="fw-bold fs-6">Co-Founder</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- MEET HAE section inside the border for all screen sizes -->
+                <div class="col-12 col-md-3 d-flex justify-content-center align-items-center mt-4 mt-md-0">
+                    <div class="text-center">
+                        <img src="hae.jpeg" class="img-fluid mb-2" style=" border-radius: 5px;" alt="Meet Image">
+                        <p class="fs-6 mb-0">MEET HAE</p>
+                        <!-- Gradient line under "MEET HAE" -->
+                        <div class="mx-auto" style="width: 120px; height: 4px; background-color: #3f4dc7;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+ <!-- Content Area 2 -->
+<div class="main-content" style="margin-top: 150px;">
+    <section class="primary-bg text-white text-center py-5">
+        <h2 class="heading">Your Trusted Financial Partner</h2>
+    </section>
+
+    <div class="container my-5">
+        <div class="row text-center">
+            <div class="col-md-4">
+                <div class="card shadow-sm p-3 bg-light">
+                    <h3 class="heading primary-text">Investment Advice</h3>
+                    <p class="subheading secondary-text">Learn how we can help you invest smarter and achieve your financial goals.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card shadow-sm p-3 bg-light">
+                    <h3 class="heading primary-text">Financial Planning</h3>
+                    <p class="subheading secondary-text">Plan your financial future with tailored advice and expert insights.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card shadow-sm p-3 bg-light">
+                    <h3 class="heading primary-text">Market Insights</h3>
+                    <p class="subheading secondary-text">Stay updated with the latest market trends and make informed decisions.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+ <!-- "What We Do" Section -->
+<section class="container mt-5">
+    <div class="text-center">
+        <h2 class="primary-text font-weight-bold mb-4" style="font-size: 36px;">What We Do</h2>
+        <p class="secondary-text lead mb-5" style="font-size: 18px;">Brainybucks consultants are qualified and experienced financial professionals who help you use your brain to help yourself.</p>
+    </div>
+
+    <div class="row text-center">
+        <div class="col-md-6 mb-4">
+            <div class="card shadow-sm p-4 border-0">
+                <div class="card-body">
+                    <h4 class="primary-text font-weight-bold" style="font-size: 24px;">1. Uncover Your Money Goals</h4>
+                    <p class="secondary-text" style="font-size: 16px;">Learn how to discover and define your financial goals, then take actionable steps to start investing in your life. We'll guide you through the process, making it simple and accessible.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6 mb-4">
+            <div class="card shadow-sm p-4 border-0">
+                <div class="card-body">
+                    <h4 class="primary-text font-weight-bold" style="font-size: 24px;">2. Understand the Financial World</h4>
+                    <p class="secondary-text" style="font-size: 16px;">We simplify how the financial world works, eliminating the jargon that often confuses people. With our guidance, you'll have the knowledge to make informed financial decisions for your future.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="text-center mt-5">
+        <p class="secondary-text" style="font-size: 18px;">We demystify the financial jargon that often confuses and empower you to make informed decisions. Our approach helps you take control of your financial life.</p>
+    </div>
+</section>
+
+    <!-- Footer Section -->
+    <footer class="footer primary-bg text-white py-3">
+        <div class="container d-flex justify-content-between">
+            <div class="d-flex align-items-center">
+                <img src="Logos/logo2.png" alt="BrainyBucks Logo" class="logo me-3" style="width: 40px; height: 40px;">
+                <span style="color: white; font-size: 16px; padding-right: 30px;">BrainyBucks</span>
+            </div>
+            <div class="d-flex flex-column align-items-end">
+                <span style="color: white; font-size: 14px;">Your trusted partner for financial success.</span>
+                <span style="color: #9CA3AF; font-size: 12px;">Investments | Banking | Insurance | Retirement</span>
+            </div>
+        </div>
+        <div class="container text-center mt-2">
+            <p style="color: #ffffff; font-size: 14px;">© 2025 BrainyBucks. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="server.js"></script>
+</body>
+</html>

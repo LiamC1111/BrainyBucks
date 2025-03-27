@@ -3,195 +3,235 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BrainyBucks</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"> 
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+    <title>Brainybucks</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        * {
-            font-family: 'Montserrat', sans-serif;
+        body {
+            font-family: 'Quicksand', sans-serif;
         }
-        /* Fuchsia Color Scheme */
-        .primary-bg {
-            background: linear-gradient(135deg, #3f4dc7, #a04be1)
+        .bg-primary-brainybucks {
+            background: linear-gradient(135deg, #7C3AED, #a04be1)
         }
-        .primary-text {
-            color: #9B4D96;
+        .bg-third-brainybucks{
+        background-color: #5B21B6;
         }
-        .secondary-text {
-            color: #6B4C8D;
+
+        .bg-footer-brainybucks {
+        background-color: #5B21B6;
         }
-        .btn-primary-custom {
-            background-color: #9B4D96;
+        .text-primary-brainybucks {
+            color: #7C3AED;
+        }
+        .bg-secondary-brainybucks {
+            background-color: #F5F3FF;
+        }
+        .bg-dark-brainybucks {
+            background-color: #5B21B6;
+        }
+        .btn-primary-brainybucks {
+            background-color: #5B21B6;
+            color: white;
             border: none;
+            border-radius: 9999px;
+            padding: 10px 20px;
+            font-weight: 400;
         }
-        .btn-outline-primary-custom {
-            border-color: #9B4D96;
-            color: #9B4D96;
+        .btn-primary-brainybucks:hover {
+            background-color: #6A2DBD;
         }
+        .contact-button {
+            background-color: white;
+            color: #7C3AED;
+            border-radius: 9999px;
+            padding: 8px 16px;
+            font-weight: 400;
+            text-decoration: none;
+            display: inline-block;
+        }
+        .contact-button:hover {
+            background-color: #f0f0f0;
+        }
+        .feature-card {
+            background-color: #F5F3FF;
+            border-radius: 12px;
+            padding: 30px;
+            text-align: center;
+        }
+        .feature-card i {
+            font-size: 36px;
+            color: black; /* Placeholder for icon color */
+        }
+        .footer-link {
+            color: white;
+            text-decoration: none;
+        }
+        .footer-link:hover {
+            text-decoration: underline;
+        }
+
+        a img {
+    transition: filter 0.3s;
+        }
+
+    a:hover img {
+    filter: brightness(0) saturate(100%) invert(24%) sepia(88%) saturate(626%) hue-rotate(228deg) brightness(89%) contrast(99%);
+     }
+
     </style>
 </head>
-
 <body>
-    <!-- Fixed Header with Navbar -->
-    <header class="header primary-bg text-white py-3 fixed-top">
-        <div class="container d-flex justify-content-between align-items-center">
-            <div class="d-flex align-items-center">
-                <img src="logo3.png" alt="BrainyBucks Logo" class="logo me-3" style="width: 40px; height: 40px;">
-                <h1 class="m-0">BrainyBucks</h1>
-            </div>
-            <!-- Navbar -->
-            <nav class="navbar navbar-expand-lg navbar-dark ">
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav ms-auto">
-                        <li class="nav-item"><a class="nav-link text-white" href="#">Home</a></li>
-                        <li class="nav-item"><a class="nav-link text-white" href="#">About</a></li>
-                        <li class="nav-item"><a class="nav-link text-white" href="#">Services</a></li>
-                        <li class="nav-item"><a class="nav-link text-white" href="#">Contact</a></li>
-                    </ul>
+    <header class="bg-primary-brainybucks py-3">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-dark">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="#">
+                        <div style="background-color: #F0F0F0; color: #999999; font-size: 12px; font-weight: 400; text-align: center; display: flex; justify-content: center; align-items: center; width: 128px; height: 52px;">IMG<br>128×52</div>
+                    </a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">What We Do</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">How We Help</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="contact-button" href="#">Contact Us</a>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </nav>
         </div>
     </header>
+    <!-- Your other sections -->
 
-    
-
-    <!-- Main Content Section -->
-    <section class="container mt-5 pt-5 pb-5" style="padding-top: 100px; padding-bottom: 80px;">
-        <div class="row">
-            <!-- Left Content Section -->
-            <div class="col-md-6 d-flex align-items-center">
-                <div>
-                    <h2 class="primary-text font-weight-bold" style="font-size: 48px;">We simplify financial stuff</h2>
-                    <p class="secondary-text" style="font-size: 20px; line-height: 1.5;">DIY Financial plan (it’s not hard!)</p>
-                    <button class="btn btn-primary-custom mt-4" style="width: 182px; height: 58px; border-radius: 8px;">Contact us now</button>
-                </div>
-            </div>
-            <!-- Right Content Section (Image) -->
-            <div class="col-md-6">
-                <img src="https://placehold.co/624x624" class="img-fluid" alt="Financial Image">
-            </div>
-        </div>
-    </section>
-<!-- Testimonial Section -->
-<div class="container py-5 position-relative">
-    <div class="row justify-content-center">
-        <div class="col-12 col-md-10 p-4" style="border: 2px solid #3f4dc7;">
-            <div class="row align-items-center">
-                <div class="col-md-9">
-                    <div class="row align-items-center">
-                        <div class="col-4 col-md-3 text-center">
-                            <img src="quote.svg" class="img-fluid" style="max-width: 80px; height: auto; filter: invert(40%) sepia(80%) saturate(5500%) hue-rotate(210deg) brightness(90%) contrast(90%);" alt="Profile Image">
-
-                        </div>
-                        <div class="col-8 col-md-9">
-                            <p class="mt-3 fs-5">
-                                Most financial advice feels overwhelming and out of reach. I built BrainyBucks to give you clear, step-by-step guidance—so managing money feels doable, not stressful.
-                            </p>
-                            <h4 class="mt-4">Hae Chung</h4>
-                            <p class="fw-bold fs-6">Co-Founder</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- MEET HAE section inside the border for all screen sizes -->
-                <div class="col-12 col-md-3 d-flex justify-content-center align-items-center mt-4 mt-md-0">
-                    <div class="text-center">
-                        <img src="hae.jpeg" class="img-fluid mb-2" alt="Meet Image">
-                        <p class="fs-6 mb-0">MEET HAE</p>
-                        <!-- Gradient line under "MEET HAE" -->
-                        <div class="mx-auto" style="width: 120px; height: 4px; background-color: #3f4dc7;"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-
- <!-- Content Area 2 -->
-<div class="main-content" style="margin-top: 150px;">
-    <section class="primary-bg text-white text-center py-5">
-        <h2 class="heading">Your Trusted Financial Partner</h2>
-    </section>
-
-    <div class="container my-5">
-        <div class="row text-center">
-            <div class="col-md-4">
-                <div class="card shadow-sm p-3 bg-light">
-                    <h3 class="heading primary-text">Investment Advice</h3>
-                    <p class="subheading secondary-text">Learn how we can help you invest smarter and achieve your financial goals.</p>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card shadow-sm p-3 bg-light">
-                    <h3 class="heading primary-text">Financial Planning</h3>
-                    <p class="subheading secondary-text">Plan your financial future with tailored advice and expert insights.</p>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card shadow-sm p-3 bg-light">
-                    <h3 class="heading primary-text">Market Insights</h3>
-                    <p class="subheading secondary-text">Stay updated with the latest market trends and make informed decisions.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-    
- <!-- "What We Do" Section -->
-<section class="container mt-5">
-    <div class="text-center">
-        <h2 class="primary-text font-weight-bold mb-4" style="font-size: 36px;">What We Do</h2>
-        <p class="secondary-text lead mb-5" style="font-size: 18px;">Brainybucks consultants are qualified and experienced financial professionals who help you use your brain to help yourself.</p>
-    </div>
-
-    <div class="row text-center">
-        <div class="col-md-6 mb-4">
-            <div class="card shadow-sm p-4 border-0">
-                <div class="card-body">
-                    <h4 class="primary-text font-weight-bold" style="font-size: 24px;">1. Uncover Your Money Goals</h4>
-                    <p class="secondary-text" style="font-size: 16px;">Learn how to discover and define your financial goals, then take actionable steps to start investing in your life. We'll guide you through the process, making it simple and accessible.</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-md-6 mb-4">
-            <div class="card shadow-sm p-4 border-0">
-                <div class="card-body">
-                    <h4 class="primary-text font-weight-bold" style="font-size: 24px;">2. Understand the Financial World</h4>
-                    <p class="secondary-text" style="font-size: 16px;">We simplify how the financial world works, eliminating the jargon that often confuses people. With our guidance, you'll have the knowledge to make informed financial decisions for your future.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="text-center mt-5">
-        <p class="secondary-text" style="font-size: 18px;">We demystify the financial jargon that often confuses and empower you to make informed decisions. Our approach helps you take control of your financial life.</p>
-    </div>
-</section>
-
-    <!-- Footer Section -->
-    <footer class="footer primary-bg text-white py-3">
-        <div class="container d-flex justify-content-between">
-            <div class="d-flex align-items-center">
-                <img src="logo3.png" alt="BrainyBucks Logo" class="logo me-3" style="width: 40px; height: 40px;">
-                <span style="color: white; font-size: 16px; padding-right: 30px;">BrainyBucks</span>
-            </div>
-            <div class="d-flex flex-column align-items-end">
-                <span style="color: white; font-size: 14px;">Your trusted partner for financial success.</span>
-                <span style="color: #9CA3AF; font-size: 12px;">Investments | Banking | Insurance | Retirement</span>
-            </div>
-        </div>
-        <div class="container text-center mt-2">
-            <p style="color: #ffffff; font-size: 14px;">© 2025 BrainyBucks. All rights reserved.</p>
-        </div>
-    </footer>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-..." crossorigin="anonymous"></script>
 </body>
 </html>
+
+    <section class="bg-third-brainybucks py-5">
+        <div class="container text-center text-white">
+            <h1 class="display-3 fw-normal">We Simplify Financial Stuff</h1>
+            <p class="lead fw-normal mb-4">DIY Financial Plan (it's not hard!)</p>
+            <a href="#" class="btn btn-primary-brainybucks btn-lg">Contact Us Now</a>
+        </div>
+    </section>
+
+    <section class="bg-white py-5">
+        <div class="container py-5">
+            <h2 class="text-center text-primary-brainybucks mb-4">What We Do</h2>
+            <p class="lead text-center mb-5">Brainybucks consultants are qualified and experienced financial professionals who help you use your brain to help yourself.</p>
+            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
+                <div class="col">
+                    <div class="feature-card h-100">
+                        <img src="assets/What we do/Goal.svg" alt="Uncover Money Goals" class="mb-3" style="width: 50px; height: 50px;">
+                        <h3>Uncover Money Goals</h3>
+                        <p>Learn about uncovering your money goals and start investing in your life.</p>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="feature-card h-100">
+                        <img src="assets/What we do/book.svg" alt="Financial Education" class="mb-3" style="width: 50px; height: 50px;">
+                        <h3>Financial Education</h3>
+                        <p>Help you understand how the financial world really works, beyond the marketing.</p>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="feature-card h-100">
+                        <img src="assets/What we do/test.svg" alt="DIY Financial Plan" class="mb-3" style="width: 50px; height: 50px;">
+                        <h3>DIY Financial Plan</h3>
+                        <p>Learn how to create and manage your own financial plan effectively.</p>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="feature-card h-100">
+                        <img src="assets/What we do/Account.svg" alt="Investment Guidance" class="mb-3" style="width: 50px; height: 50px;">
+                        <h3>Investment Guidance</h3>
+                        <p>Understand ETFs, Shares, real estate, and superannuation options.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-secondary-brainybucks py-5">
+        <div class="container py-5">
+            <h2 class="text-center text-primary-brainybucks mb-4">How Brainybucks Helps</h2>
+            <div class="row row-cols-1 row-cols-md-2 g-4">
+                <div class="col">
+                    <div class="bg-white rounded-3 p-4 h-100 d-flex flex-column justify-content-between">
+                        <div class="d-flex align-items-center mb-3">
+                            <div class="bg-primary-brainybucks rounded-circle text-white d-flex align-items-center justify-content-center me-3" style="width: 48px; height: 48px; font-size: 20px;">1</div>
+                            <h3 class="fs-4 mb-0">Contact Us</h3>
+                        </div>
+                        <p class="mb-2">Talk to a real human. We are 100% profit for purpose business.</p>
+                        <p class="mb-0">Brainybucks helps everyone, everywhere with a growth mindset.</p>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="bg-white rounded-3 p-4 h-100 d-flex flex-column justify-content-between">
+                        <div class="d-flex align-items-center mb-3">
+                            <div class="bg-primary-brainybucks rounded-circle text-white d-flex align-items-center justify-content-center me-3" style="width: 48px; height: 48px; font-size: 20px;">2</div>
+                            <h3 class="fs-4 mb-0">The "Fact Find"</h3>
+                        </div>
+                        <p class="mb-2">We demystify and simplify things so anyone can DIY financial stuff.</p>
+                        <p class="mb-2">We help people 7-70 years old!</p>
+                        <p class="mb-0">When you contact Brainybucks Consultants, we listen and direct you to practical solutions.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-primary-brainybucks py-5">
+        <div class="container text-center text-white py-5">
+            <h2 class="display-6 fw-normal mb-3">Ready to Take Control of Your Financial Life?</h2>
+            <p class="lead fw-normal mb-4">Everyone has the same 168 hours in a week. Start your journey today!</p>
+            <a href="#" class="btn btn-primary-brainybucks btn-lg">Get Started Now</a>
+        </div>
+    </section>
+
+    <footer class="bg-dark-brainybucks py-5">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" style="position: absolute; bottom: 100%; width: 100%; height: 100px;">
+            <path fill="#5B21B6" d="M0,128L30,144C60,160,120,192,180,186.7C240,181,300,139,360,128C420,117,480,139,540,160C600,181,660,203,720,213.3C780,224,840,224,900,213.3C960,203,1020,181,1080,160C1140,139,1200,117,1260,128C1320,139,1380,181,1410,202.7L1440,224L1440,320L1410,320C1380,320,1320,320,1260,320C1200,320,1140,320,1080,320C1020,320,960,320,900,320C840,320,780,320,720,320C660,320,600,320,540,320C480,320,420,320,360,320C300,320,240,320,180,320C120,320,60,320,30,320H0Z"></path>
+        </svg>
+        <div class="container">
+            <div class="row row-cols-1 row-cols-md-3">
+                <div class="col mb-4 mb-md-0">
+                    <div style="background-color: #F0F0F0; color: #999999; font-size: 12px; font-weight: 400; text-align: center; display: flex; justify-content: center; align-items: center; width: 128px; height: 128px; margin-bottom: 1rem;">IMG<br>128×128</div>
+                    <p class="text-white-50">Helping you take control of your financial future.</p>
+                </div>
+                <div class="col mb-4 mb-md-0">
+                    <h5 class="text-white mb-3">Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="footer-link">What We Do</a></li>
+                        <li><a href="#" class="footer-link">How We Help</a></li>
+                        <li><a href="#" class="footer-link">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="col">
+                    <h5 class="text-white mb-3">Connect With Us</h5>
+                    <div class="d-flex gap-3">
+                        <!-- LinkedIn -->
+                            <a href="https://www.linkedin.com/in/hae-chung-0a08b09/" class="text-white-50" target="_blank">
+                            <img src="assets/footer/linkedin.svg" width="24" height="24" alt="LinkedIn">
+                        </a>
+                    
+                        <!-- Facebook -->
+                        <a href="#" class="text-white-50">
+                            <img src="assets/footer/facebook.svg" width="24" height="24" alt="Facebook">
+                        </a>
+                    
+                        <!-- Twitter/X -->
+                        <a href="#" class="text-white-50">
+                            <img src="assets/footer/twitter.svg" width="24" height="24" alt="Twitter">
+                        </a>
+                    </div>
+                    
