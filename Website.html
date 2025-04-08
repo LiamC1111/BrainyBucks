@@ -238,7 +238,7 @@ footer .wave#wave4 {
 }
 
 .navbar-nav .nav-link {
-    color:  #000000;
+    color:  #4554d3;
     transition: filter 0.3s;
 }
 
@@ -247,6 +247,27 @@ footer .wave#wave4 {
     color: rgb(255 255 255) !important;
 }
 
+/* Button styles for .btn-primary-brainybucks */
+.btn-primary-brainybucks {
+    background: linear-gradient(135deg, #7C3AED, #a04be1); /* purple gradient background */
+    color: white; /* white text color */
+    border: 2px solid white; /* white border */
+    padding: 12px 30px; /* padding for the button */
+    text-transform: uppercase; /* uppercase text */
+    font-weight: 600; /* bold text */
+    font-size: 16px; /* font size */
+    border-radius: 30px; /* rounded corners */
+    transition: background 0.3s ease, transform 0.3s ease, border 0.3s ease; /* smooth transition */
+    display: inline-block; /* ensure it stays inline with the content */
+    text-decoration: none; /* remove underline from the link */
+}
+
+/* Hover effect */
+.btn-primary-brainybucks:hover {
+    background: linear-gradient(135deg, #6a2a91, #8e4be3); /* darker gradient on hover */
+    transform: scale(1.05); /* slight scale-up effect */
+    border: 2px solid #fff; /* ensure the white border stays visible on hover */
+}
 
 </style>
 
@@ -285,12 +306,15 @@ footer .wave#wave4 {
           <h2 class="fw-bold" style="color: #6f42c1;">Financial Stuff Simplified!</h2>
           <h3 class="fw-semibold mb-3" style="color: #111;">DIY Financial Plan (it's not hard!)</h3>
 
-          <a href="#" class="btn btn-danger px-4 py-2 rounded-pill fw-semibolds" style="background-color: #6f42c1; color: white;">Contact us now</a>
+          <a href="#" class="btn btn-danger px-4 py-2 rounded-pill fw-semibold" style="background: linear-gradient(135deg, #7C3AED, #a04be1); border-color: white;">Contact us now</a>
+
+
+
         </div>
   
         <!-- Right Side: Image -->
         <div class="col-lg-6 text-center position-relative">
-          <img src="assets/Logos/Indicators of financial growth and success.svg" class="img-fluid shadow-lg" style="max-width: 250px; transform: rotate(-8deg); position: relative; z-index: 2;" alt="Guide Cover">
+          <img src="assets/Logos/Indicators of financial growth and success.svg" class="img-fluid shadow-lg" style="max-width: 300px; transform: rotate(-8deg); position: relative; z-index: 2;" alt="Guide Cover">
           
         </div>
       </div>
@@ -305,21 +329,21 @@ footer .wave#wave4 {
             <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4"> <!-- Changed to 3 columns -->
                 <div class="col">
                     <div class="feature-card h-100">
-                        <img src="assets/What we do/Goal.svg" alt="Uncover Money Goals" class="mb-3" style="width: 50px; height: 50px;">
+                        <img src="assets/section1/Adding money to savings.svg" alt="Uncover Money Goals" class="mb-3" style="width: 150px; height: 150px;">
                         <h3>Uncover Money Goals</h3>
                         <p>Learn about uncovering your money goals and start investing in your life.</p>
                     </div>
                 </div>
                 <div class="col">
                     <div class="feature-card h-100">
-                        <img src="assets/What we do/book.svg" alt="Financial Education" class="mb-3" style="width: 50px; height: 50px;">
+                        <img src="assets/section1/Graphs and calculator for financial planning.svg" alt="Financial Education" class="mb-3" style="width: 150px; height: 150px;">
                         <h3>Financial Education</h3>
                         <p>Help you understand how the financial world really works, beyond the marketing.</p>
                     </div>
                 </div>
                 <div class="col">
                     <div class="feature-card h-100">
-                        <img src="assets/What we do/test.svg" alt="DIY Financial Plan" class="mb-3" style="width: 50px; height: 50px;">
+                        <img src="assets/section1/young people students.svg" alt="DIY Financial Plan" class="mb-3" style="width: 150px; height: 150px;">
                         <h3>DIY Financial Plan</h3>
                         <p>Learn how to create and manage your own financial plan effectively.</p>
                     </div>
@@ -413,7 +437,7 @@ footer .wave#wave4 {
             <p class="lead fw-normal mb-4">Everyone has the same 168 hours in a week. Start your journey today!</p>
             <a href="#" class="btn-primary-brainybucks">Get Started Now</a>
         </div>
-    </section>    
+    </section>
     
 
     <footer class="bg-dark-brainybucks position-relative py-5">
