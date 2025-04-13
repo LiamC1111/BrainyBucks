@@ -195,3 +195,8 @@ display: grid;
     font-size: 16px;
     margin-bottom: 10px;
 }
+ .socials img:hover {
+    transition: filter 0.3s;
+    filter: brightness(0) saturate(100%) invert(24%) sepia(88%) saturate(626%) hue-rotate(228deg) brightness(89%) contrast(99%);
+    
+ }
