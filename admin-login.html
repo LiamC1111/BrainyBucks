@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BrainyBucks Login</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gradient-to-b from-sky-100 to-white min-h-screen flex items-center justify-center">
+  <!-- Logo and Title -->
+  <div class="absolute top-4 left-4">
+    <span class="font-semibold text-lg text-gray-800">BrainyBucks Consultants</span>
+  </div>
+
+  <!-- Login Container -->
+  <div class="bg-gradient-to-t from-sky-100 to-white bg-opacity-90 rounded-3xl shadow-xl p-8 w-full max-w-sm text-center">
+    <!-- Logo -->
+    <div class="w-12 h-12 mx-auto mb-4 flex items-center justify-center bg-gray-100 rounded-xl shadow">
+      <img src="assets/Logos/logo.png" alt="BrainyBucks Logo" class="w-8 h-8" />
+    </div>
+    <h2 class="text-xl font-semibold mb-2 text-gray-800">Sign in to BrainyBucks</h2>
+    <p class="text-sm text-gray-500 mb-6">Access your account to manage the website.</p>
+
+    <form action="/admin-dashboard" method="POST" class="space-y-4">
+      <!-- Email Input -->
+      <input type="email" name="email" placeholder="Email" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-300" required />
+      <!-- Password Input -->
+      <div class="relative">
+        <input type="password" name="password" placeholder="Password" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-300" required />
+        <button type="button" class="absolute right-3 top-2.5 text-gray-400 hover:text-gray-600">
+          👁️
+        </button>
+      </div>
+      <!-- Submit Button -->
+      <button type="submit" class="w-full py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600">Login</button>
+    </form>
+
+    <!-- Back to Website Button -->
+    <div class="mt-4 text-center">
+      <a href="/website" class="text-blue-500 underline hover:text-blue-700 font-medium">
+        Back to Website
+      </a>
+    </div>
+  </div>
+</body>
+</html>
