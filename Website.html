@@ -9,11 +9,96 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Adelle+Sans:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="global.css">
-    <link rel="stylesheet" href="navbar.css">
-    <link rel="stylesheet" href="sections.css">
-    <link rel="stylesheet" href="footer.css">
-    <link rel="stylesheet" href="wave.css">
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/sections.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <style>
+        /* Footer Waves */
+/* Ensure the waves overlap the section above */
+.waves {
+    position: absolute;
+    bottom: -20px; /* Move the waves 20px lower */
+    left: 0;
+    width: 100%;
+    height: 100px;
+    overflow: hidden;
+    line-height: 0;
+    z-index: 1; /* Ensure it appears above the section */
+}
+
+.wave {
+    position: absolute;
+    width: 100%;
+    height: 100px;
+    background: url('assets/footer/wave.png');
+    background-size: 1000px 100px;
+}
+
+.wave#wave1 {
+    z-index: 1000;
+    opacity: 1;
+    bottom: 0;
+    animation: animateWave01 4s linear infinite;
+}
+
+.wave#wave2 {
+    z-index: 999;
+    opacity: 0.5;
+    bottom: 10px;
+    animation: animateWave02 5s linear infinite;
+}
+
+.wave#wave3 {
+    z-index: 998;
+    opacity: 0.5;
+    bottom: 0;
+    animation: animateWave03 6s linear infinite;
+}
+
+.wave#wave4 {
+    z-index: 997;
+    opacity: 0.25;
+    bottom: 0;
+    animation: animateWave04 7s linear infinite;
+}
+
+@keyframes animateWave01 {
+    0% {
+        background-position-x: 1000px;
+    }
+    100% {
+        background-position-x: 0;
+    }
+}
+
+@keyframes animateWave02 {
+    0% {
+        background-position-x: 0;
+    }
+    100% {
+        background-position-x: 1000px;
+    }
+}
+
+@keyframes animateWave03 {
+    0% {
+        background-position-x: 0;
+    }
+    100% {
+        background-position-x: -1000px;
+    }
+}
+
+@keyframes animateWave04 {
+    0% {
+        background-position-x: 0;
+    }
+    100% {
+        background-position-x: -1000px;
+    }
+}
+    </style>
 </head>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container"> <!-- Adds padding and centers content -->
