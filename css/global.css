@@ -19,6 +19,10 @@ body {
     background-color: #5B21B6;
 }
 
+.Wave-container {
+    position: relative; 
+}
+
 .text-primary-brainybucks {
     color: #7C3AED;
 }
