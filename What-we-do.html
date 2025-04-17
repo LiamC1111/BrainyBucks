@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BrainyBucks - Financial Consulting</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/sections.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+body {
+    font-family: 'Adelle Sans', 'Quicksand', sans-serif;
+}
+.waves {
+    position: absolute;
+    bottom: -20px; /* Move the waves 20px lower */
+    left: 0;
+    width: 100%;
+    height: 100px;
+    overflow: hidden;
+    line-height: 0;
+    z-index: 1; /* Ensure it appears above the section */
+}
+
+.wave {
+    position: absolute;
+    width: 100%;
+    height: 100px;
+    background: url('assets/footer/wave.png');
+    background-size: 1000px 100px;
+}
+
+.wave#wave1 {
+    z-index: 1000;
+    opacity: 1;
+    bottom: 0;
+    animation: animateWave01 4s linear infinite;
+}
+
+.wave#wave2 {
+    z-index: 999;
+    opacity: 0.5;
+    bottom: 10px;
+    animation: animateWave02 5s linear infinite;
+}
+
+.wave#wave3 {
+    z-index: 998;
+    opacity: 0.5;
+    bottom: 0;
+    animation: animateWave03 6s linear infinite;
+}
+
+.wave#wave4 {
+    z-index: 997;
+    opacity: 0.25;
+    bottom: 0;
+    animation: animateWave04 7s linear infinite;
+}
+
+@keyframes animateWave01 {
+    0% {
+        background-position-x: 1000px;
+    }
+    100% {
+        background-position-x: 0;
+    }
+}
+
+@keyframes animateWave02 {
+    0% {
+        background-position-x: 0;
+    }
+    100% {
+        background-position-x: 1000px;
+    }
+}
+
+@keyframes animateWave03 {
+    0% {
+        background-position-x: 0;
+    }
+    100% {
+        background-position-x: -1000px;
+    }
+}
+
+@keyframes animateWave04 {
+    0% {
+        background-position-x: 0;
+    }
+    100% {
+        background-position-x: -1000px;
+    }
+}
+    
+    </style>
+</head>
+</head>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container"> <!-- Adds padding and centers content -->
+      <a class="navbar-brand" href="/">
+        <img src="assets/Logos/blue.png" style="width: 110px; height: 81px;" alt="Brainybucks Consultants Logo">
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="What-we-do.html">What We Do</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="How-we-help.html">How We Help</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Contact Us</a>
+          </li>
+        </ul>
+      </div>
+    </div> <!-- End container -->
+  </nav>
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-r from-purple-50 to-purple-100 py-20">
+        <div class="container mx-auto px-5 text-center">
+            <div class="flex justify-center mb-6">
+                <div class="w-12 h-12 bg-purple-600 rounded-full flex items-center justify-center mr-4">
+                    <!-- Icon placeholder -->
+                </div>
+                <h1 class="text-4xl md:text-5xl font-bold text-gray-900">What We Do</h1>
+            </div>
+            <p class="text-lg md:text-xl text-gray-700 max-w-3xl mx-auto">
+                At Brainybucks, we're qualified financial professionals who want to help you help yourself. 
+                <span class="font-medium">Real humans. Real care.</span>
+            </p>
+        </div>
+    </section>
+
+    <!-- Help Section -->
+    <section class="py-16 md:py-24">
+        <div class="container mx-auto px-5">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-12 md:mb-0 md:pr-12">
+                    <h2 class="text-3xl font-bold text-gray-900 mb-6">We're here to help you:</h2>
+                    <ul class="space-y-6">
+                        <li class="flex">
+                            <div class="w-5 h-5 bg-purple-600 rounded-full mt-1 mr-4 flex-shrink-0"></div>
+                            <p class="text-gray-700 text-lg">
+                                Discover your money goals – Start investing in your life, not just your bank account.
+                            </p>
+                        </li>
+                        <li class="flex">
+                            <div class="w-5 h-5 bg-purple-600 rounded-full mt-1 mr-4 flex-shrink-0"></div>
+                            <p class="text-gray-700 text-lg">
+                                Understand how the financial world really works.
+                            </p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="md:w-1/2">
+                    <img src="assets/Logos/Indicators of financial growth and success.svg" alt="Financial consultation" class="w-full rounded-lg shadow-xl">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reality Check Section -->
+    <section class="bg-gray-50 py-16 md:py-24">
+        <div class="container mx-auto px-5">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-3xl font-bold text-gray-900 mb-8">Let's be real:</h2>
+                <div class="bg-white p-8 rounded-xl shadow-md">
+                    <p class="text-gray-700 text-lg mb-6">
+                        Most financial planners work for big banks and institutions. Their job? Sell you products.
+                    </p>
+                    <p class="text-gray-700 text-lg mb-8">
+                        That's how they get rich while asking you to "trust" them.
+                    </p>
+                    <div class="border-l-4 border-red-500 pl-6">
+                        <h3 class="text-xl font-bold text-gray-900 mb-4">Marketing plays on your ego and emotions.</h3>
+                        <p class="text-gray-600 mb-4">You've seen the hype:</p>
+                        <div class="flex flex-wrap gap-3">
+                            <span class="bg-red-100 text-red-800 px-4 py-1 rounded-full">"Trade securities"</span>
+                            <span class="bg-red-100 text-red-800 px-4 py-1 rounded-full">"Invest in crypto"</span>
+                            <span class="bg-red-100 text-red-800 px-4 py-1 rounded-full">"Get rich quick"</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Different Approach Section -->
+    <section class="py-16 md:py-24">
+        <div class="container mx-auto px-5">
+            <div class="max-w-4xl mx-auto text-center">
+                <h2 class="text-3xl font-bold text-purple-600 mb-8">We're different.</h2>
+                <p class="text-gray-700 text-xl mb-12">
+                    Brainybucks Consultants teach you how to think clearly, stay grounded, and take control of your financial life.
+                </p>
+                <div class="bg-blue-50 p-8 rounded-xl">
+                    <p class="text-gray-700 text-lg">
+                        Because life throws curveballs – job loss, grief, even homelessness. Why not prepare?
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Good News Section -->
+    <section class="bg-gradient-to-r from-purple-50 to-purple-100 py-17 md:py-24">
+        <div class="container mx-auto px-5">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-3xl font-bold text-black mb-8">But here's the good news:</h2>
+                <p class="text-black text-xl mb-12">
+                    We've seen "ordinary" people build extraordinary lives. They chose wisely. You can too.
+                </p>
+                <div class="bg-white p-8 rounded-xl shadow-md text-center">
+                    <p class="text-2xl font-bold text-gray-900">
+                        We all get the same 168 hours a week. What will you do with
+                        <br>
+                        <span class="text-purple-600">yours?</span>
+                    </p>
+                    <a href="#" class="btn-primary-brainybucks w-30 py-2" style="background: linear-gradient(135deg, #7C3AED, #a04be1); border-color: white; border-radius: 30px; text-decoration: none; color: white; display: inline-block; text-align: center; padding: 10px 20px;">
+                        Click here to Email us? Start here
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+  
+    
+    <section class="Wave-container">  
+    <div class="waves">
+        <div class="wave" id="wave1"></div>
+        <div class="wave" id="wave2"></div>
+        <div class="wave" id="wave3"></div>
+        <div class="wave" id="wave4"></div>
+    </div>
+</section>
+    <footer class="footer">
+        <!-- Logo -->
+        <div class="logo">
+            <img src="assets/Logos/logo2.png" alt="BrainyBucks Logo" style="max-width: 65px;">
+        </div>
+
+        <!-- Social Links -->
+        <div class="socials">
+            <a href="https://www.linkedin.com/in/hae-chung-0a08b09/" target="_blank">
+                <img src="assets/footer/linkedin.svg" width="24" height="24" alt="LinkedIn">
+            </a>
+            <a href="#" target="_blank">
+                <img src="assets/footer/facebook.svg" width="24" height="24" alt="Facebook">
+            </a>
+            <a href="#" target="_blank">
+                <img src="assets/footer/twitter.svg" width="24" height="24" alt="Twitter">
+            </a>
+            <a href="https://www.youtube.com/@FinancialSauc" target="_blank">
+                <img src="assets/footer/youtube.svg" width="24" height="24" alt="YouTube">
+            </a>
+        </div>
+
+        <!-- Navigation Links -->
+        <div class="links">
+            <ul>
+                <li>
+                    <h2>Quick Links</h2>
+                </li>
+                <li><a href="#">What We Do</a></li>
+                <li><a href="#">How BrainyBucks Helps</a></li>
+                <li><a href="#">Step-by-Step Financial Guide</a></li>
+            </ul>
+            <ul>
+                <li>
+                    <h2>Services</h2>
+                </li>
+                <li><a href="#">Financial Planning</a></li>
+                <li><a href="#">Workshops</a></li>
+                <li><a href="#">Consultations</a></li>
+            </ul>
+            <ul>
+                <li>
+                    <h2>Resources</h2>
+                </li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">FAQs</a></li>
+                <li><a href="#">Case Studies</a></li>
+            </ul>
+            <ul>
+                <li>
+                    <h2>Contact</h2>
+                </li>
+                <li><a href="#">Email Us</a></li>
+                <li><a href="#">Call Us</a></li>
+                <li><a href="#">Visit Us</a></li>
+            </ul>
+        </div>
+    </footer>
+    <script>
+        // Mobile menu toggle functionality would go here
+        document.addEventListener('DOMContentLoaded', function() {
+            // You would add JavaScript for mobile menu toggle here
+        });
+    </script>
+</body>
+</html>
