@@ -16,7 +16,7 @@ app.use('/css', express.static(__dirname + '/css'));
 const users = [
     {
         username: 'info@brainybucks.com',
-        password: 'admin123' // Eesy to Hack
+        password: 'admin123' // Easy to Hack
     }
 ];
 
@@ -28,6 +28,11 @@ app.get('/', (req, res) => {
 // Route: Serve the main website
 app.get('/website', (req, res) => {
     res.sendFile(__dirname + '/Website.html');
+});
+
+// Route: Serve the "What We Do" page
+app.get('/What-we-do.html', (req, res) => {
+    res.sendFile(__dirname + '/What-we-do.html');
 });
 
 // Route: Handle login
