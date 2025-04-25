@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BrainyBucks - Financial Consulting</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/sections.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+body {
+    font-family: 'Adelle Sans', 'Quicksand', sans-serif;
+}
+.waves {
+    position: absolute;
+    bottom: -20px; /* Move the waves 20px lower */
+    left: 0;
+    width: 100%;
+    height: 100px;
+    overflow: hidden;
+    line-height: 0;
+    z-index: 1; /* Ensure it appears above the section */
+}
+
+.wave {
+    position: absolute;
+    width: 100%;
+    height: 100px;
+    background: url('assets/footer/wave.png');
+    background-size: 1000px 100px;
+}
+
+.wave#wave1 {
+    z-index: 1000;
+    opacity: 1;
+    bottom: 0;
+    animation: animateWave01 4s linear infinite;
+}
+
+.wave#wave2 {
+    z-index: 999;
+    opacity: 0.5;
+    bottom: 10px;
+    animation: animateWave02 5s linear infinite;
+}
+
+.wave#wave3 {
+    z-index: 998;
+    opacity: 0.5;
+    bottom: 0;
+    animation: animateWave03 6s linear infinite;
+}
+
+.wave#wave4 {
+    z-index: 997;
+    opacity: 0.25;
+    bottom: 0;
+    animation: animateWave04 7s linear infinite;
+}
+
+@keyframes animateWave01 {
+    0% {
+        background-position-x: 1000px;
+    }
+    100% {
+        background-position-x: 0;
+    }
+}
+
+@keyframes animateWave02 {
+    0% {
+        background-position-x: 0;
+    }
+    100% {
+        background-position-x: 1000px;
+    }
+}
+
+@keyframes animateWave03 {
+    0% {
+        background-position-x: 0;
+    }
+    100% {
+        background-position-x: -1000px;
+    }
+}
+
+@keyframes animateWave04 {
+    0% {
+        background-position-x: 0;
+    }
+    100% {
+        background-position-x: -1000px;
+    }
+}
+    
+    </style>
+</head>
+</head>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container"> <!-- Adds padding and centers content -->
+      <a class="navbar-brand" href="/website">
+        <img src="assets/Logos/blue.png" style="width: 110px; height: 81px;" alt="Brainybucks Consultants Logo">
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="What-we-do.html">What We Do</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="How-we-help.html">How We Help</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Contact Us</a>
+          </li>
+        </ul>
+      </div>
+    </div> <!-- End container -->
+  </nav>
+     <!-- Hero Section -->
+     <section class="py-20 px-5">
+        <div class="max-w-4xl mx-auto text-center">
+            <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">Contact Brainybucks – Talk to a Real Human</h1>
+            <p class="text-xl text-gray-600 mb-8">No bots. No jargon. Just real people helping you take control of your money.</p>
+            <p class="text-lg text-gray-600">Whether you've got questions about investing, planning your finances, or just want to chat, we'd love to hear from you. Send us a message and someone from the Brainybucks team will get back to you ASAP.</p>
+        </div>
+    </section>
+
+    <!-- Contact Form -->
+    <section class="py-12 px-5">
+        <div class="max-w-2xl mx-auto">
+            <div class="bg-white shadow-md rounded-xl p-8">
+                <form>
+                    <!-- First Name -->
+                    <div class="mb-8">
+                        <label for="firstName" class="block text-gray-700 mb-2">First Name</label>
+                        <input type="text" id="firstName" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-600 focus:border-transparent">
+                    </div>
+                    
+                    <!-- Email -->
+                    <div class="mb-8">
+                        <label for="email" class="block text-gray-700 mb-2">Email Address</label>
+                        <input type="email" id="email" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-600 focus:border-transparent">
+                    </div>
+                    
+                    <!-- Phone -->
+                    <div class="mb-8">
+                        <label for="phone" class="block text-gray-700 mb-2">Phone Number (optional)</label>
+                        <input type="tel" id="phone" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-600 focus:border-transparent">
+                    </div>
+                    
+                    <!-- Topic -->
+                    <div class="mb-8">
+                        <label for="topic" class="block text-gray-700 mb-2">What are you curious about?</label>
+                        <select id="topic" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-600 focus:border-transparent appearance-none bg-white">
+                            <option>Select an option</option>
+                            <option>Investing</option>
+                            <option>Retirement Planning</option>
+                            <option>Budgeting</option>
+                            <option>Debt Management</option>
+                            <option>Other</option>
+                        </select>
+                    </div>
+                    
+                    <!-- Message -->
+                    <div class="mb-8">
+                        <label for="message" class="block text-gray-700 mb-2">What's on your mind?</label>
+                        <textarea id="message" rows="5" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-600 focus:border-transparent"></textarea>
+                    </div>
+                    
+                    <!-- Contact Method -->
+                    <div class="mb-8">
+                        <p class="text-gray-700 mb-4">Preferred contact method:</p>
+                        <div class="flex space-x-8">
+                            <label class="inline-flex items-center">
+                                <input type="radio" name="contactMethod" class="h-4 w-4 text-purple-600 focus:ring-purple-500">
+                                <span class="ml-2 text-gray-700">Email</span>
+                            </label>
+                            <label class="inline-flex items-center">
+                                <input type="radio" name="contactMethod" class="h-4 w-4 text-purple-600 focus:ring-purple-500">
+                                <span class="ml-2 text-gray-700">Phone</span>
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <!-- Submit Button -->
+                    <button type="submit" class="w-full bg-purple-600 text-white font-semibold py-4 px-6 rounded-lg hover:bg-purple-700 transition duration-200">
+                        Send Message
+                    </button>
+                    
+                    <!-- Form Footer -->
+                    <div class="mt-12 text-center text-gray-600">
+                        <div class="flex items-center justify-center mb-4">
+                            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                            </svg>
+                            <span>We'll get back to you within 1–2 business days (usually sooner!)</span>
+                        </div>
+                        <div class="flex items-center justify-center">
+                            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
+                            </svg>
+                            <span>No spam. No pressure. Just real help from real people.</span>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonial -->
+    <section class="py-20 px-5">
+        <div class="max-w-4xl mx-auto bg-purple-50 rounded-xl p-8">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="mb-8 md:mb-0 md:mr-8">
+                    <img src="assets/Logos/Hae-Chung.jpg" alt="Hae Chung" class="w-48 h-48 rounded-full object-cover">
+                </div>
+                <div>
+                    <blockquote class="text-lg italic text-gray-800 mb-6">
+                        "We're not here to sell you stuff — we're here to help you build the financial life you want."
+                    </blockquote>
+                    <div>
+                        <p class="font-semibold text-purple-600">Marsoray Chen</p>
+                        <p class="text-gray-600">Financial Advisor</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="bg-purple-600 py-16 px-5">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-3xl font-bold text-white mb-8">Ready for a More Personal Touch?</h2>
+            <button class="bg-white text-purple-600 font-semibold py-3 px-6 rounded-lg hover:bg-gray-100 transition duration-200 inline-flex items-center">
+                <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
+                </svg>
+                Book a Free Call
+            </button>
+        </div>
+    </section>
+  
+    
+    <section class="Wave-container">  
+    <div class="waves">
+        <div class="wave" id="wave1"></div>
+        <div class="wave" id="wave2"></div>
+        <div class="wave" id="wave3"></div>
+        <div class="wave" id="wave4"></div>
+    </div>
+</section>
+    <footer class="footer">
+        <!-- Logo -->
+        <div class="logo">
+            <img src="assets/Logos/logo2.png" alt="BrainyBucks Logo" style="max-width: 65px;">
+        </div>
+
+        <!-- Social Links -->
+        <div class="socials">
+            <a href="https://www.linkedin.com/in/hae-chung-0a08b09/" target="_blank">
+                <img src="assets/footer/linkedin.svg" width="24" height="24" alt="LinkedIn">
+            </a>
+            <a href="#" target="_blank">
+                <img src="assets/footer/facebook.svg" width="24" height="24" alt="Facebook">
+            </a>
+            <a href="#" target="_blank">
+                <img src="assets/footer/twitter.svg" width="24" height="24" alt="Twitter">
+            </a>
+            <a href="https://www.youtube.com/@FinancialSauc" target="_blank">
+                <img src="assets/footer/youtube.svg" width="24" height="24" alt="YouTube">
+            </a>
+        </div>
+
+        <!-- Navigation Links -->
+        <div class="links">
+            <ul>
+                <li>
+                    <h2>Quick Links</h2>
+                </li>
+                <li><a href="#">What We Do</a></li>
+                <li><a href="#">How BrainyBucks Helps</a></li>
+                <li><a href="#">Step-by-Step Financial Guide</a></li>
+            </ul>
+            <ul>
+                <li>
+                    <h2>Services</h2>
+                </li>
+                <li><a href="#">Financial Planning</a></li>
+                <li><a href="#">Workshops</a></li>
+                <li><a href="#">Consultations</a></li>
+            </ul>
+            <ul>
+                <li>
+                    <h2>Resources</h2>
+                </li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">FAQs</a></li>
+                <li><a href="#">Case Studies</a></li>
+            </ul>
+            <ul>
+                <li>
+                    <h2>Contact</h2>
+                </li>
+                <li><a href="#">Email Us</a></li>
+                <li><a href="#">Call Us</a></li>
+                <li><a href="#">Visit Us</a></li>
+            </ul>
+        </div>
+    </footer>
+    <script>
+        // Mobile menu toggle functionality would go here
+        document.addEventListener('DOMContentLoaded', function() {
+            // You would add JavaScript for mobile menu toggle here
+        });
+        // Form submission handling would go here
+        document.querySelector('form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            // Here you would typically send the form data to your server
+            alert('Thank you for your message! We will get back to you soon.');
+            this.reset();
+        });
+    </script>
+</body>
+</html>
