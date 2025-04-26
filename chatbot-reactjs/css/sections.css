@@ -1,0 +1,31 @@
+/* Feature Cards */
+.feature-card {
+    background-color: #F5F3FF;
+    border-radius: 12px;
+    padding: 30px;
+    text-align: center;
+}
+
+.feature-card i {
+    font-size: 36px;
+    color: black;
+}
+
+/* Gradient Button with White Outline */
+.btn-primary-brainybucks {
+    background: linear-gradient(135deg, #7C3AED, #a04be1); /* Gradient background */
+    color: white;
+    border: 2px solid white; /* White outline */
+    border-radius: 9999px; /* Rounded corners */
+    padding: 10px 20px;
+    font-weight: 400;
+    text-decoration: none;
+    display: inline-block;
+    transition: background-color 0.3s ease, transform 0.3s ease, border-color 0.3s ease;
+}
+
+.btn-primary-brainybucks:hover {
+    background: linear-gradient(135deg, #6a2a91, #8e4be3); /* Darker gradient on hover */
+    transform: scale(1.05); /* Slightly enlarge the button */
+    border-color: #ffffff; /* Keep the white outline on hover */
+}
