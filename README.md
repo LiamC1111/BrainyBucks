@@ -1,14 +1,12 @@
-# BrainyBucks Website
+# React + Vite
 
-This project is a responsive website for BrainyBucks, designed to provide financial guidance and resources. The site includes various sections such as feature cards, a YouTube subscription section, and a footer with social media links.
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-## Features
-- **Gradient Buttons with White Outline**: Buttons now have a gradient background with a clean white outline and hover effects.
-- **Footer Enhancements**:
-  - The footer is divided into sections for better organization.
-  - The logo is slightly repositioned to align with the layout.
-  - Social media icons retain their original position and include hover effects.
-- **YouTube Subscription Section**: A dedicated section for users to subscribe to the BrainyBucks YouTube channel.
-- **Hover Effects**:
-  - Navbar links, social media icons, and logos now have consistent hover effects using CSS filters.
-- **Responsive Design**: The layout adjusts seamlessly for smaller screens.
+Currently, two official plugins are available:
+
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+
+## Expanding the ESLint configuration
+
+If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
