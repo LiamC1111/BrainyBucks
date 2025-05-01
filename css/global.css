@@ -34,3 +34,9 @@ body {
     height: auto;
     max-height: 150px;
 }
+
+#logo {
+    text-align: center;
+    display: block;
+    margin: 0 auto;
+}
