@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brainybucks</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,1,0&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/sections.css">
+    <link rel="stylesheet" href="css/footer.css">
+    
+    <style>
+        /* Footer Waves */
+/* Ensure the waves overlap the section above */
+.waves {
+    position: absolute;
+    bottom: -20px; /* Move the waves 20px lower */
+    left: 0;
+    width: 100%;
+    height: 100px;
+    overflow: hidden;
+    line-height: 0;
+    z-index: 1; /* Ensure it appears above the section */
+}
+
+.wave {
+    position: absolute;
+    width: 100%;
+    height: 100px;
+    background: url('assets/footer/wave.png');
+    background-size: 1000px 100px;
+}
+
+.wave#wave1 {
+    z-index: 1000;
+    opacity: 1;
+    bottom: 0;
+    animation: animateWave01 4s linear infinite;
+}
+
+.wave#wave2 {
+    z-index: 999;
+    opacity: 0.5;
+    bottom: 10px;
+    animation: animateWave02 5s linear infinite;
+}
+
+.wave#wave3 {
+    z-index: 998;
+    opacity: 0.5;
+    bottom: 0;
+    animation: animateWave03 6s linear infinite;
+}
+
+.wave#wave4 {
+    z-index: 997;
+    opacity: 0.25;
+    bottom: 0;
+    animation: animateWave04 7s linear infinite;
+}
+
+@keyframes animateWave01 {
+    0% {
+        background-position-x: 1000px;
+    }
+    100% {
+        background-position-x: 0;
+    }
+}
+
+@keyframes animateWave02 {
+    0% {
+        background-position-x: 0;
+    }
+    100% {
+        background-position-x: 1000px;
+    }
+}
+
+@keyframes animateWave03 {
+    0% {
+        background-position-x: 0;
+    }
+    100% {
+        background-position-x: -1000px;
+    }
+}
+
+@keyframes animateWave04 {
+    0% {
+        background-position-x: 0;
+    }
+    100% {
+        background-position-x: -1000px;
+    }
+
+}
+    </style> 
+</head>
+<body>
+    <div id="root" class="position-relative" style="z-index: 1050;">
+        <!-- React content will render here -->
+    </div>
+    <script type="module" src="/src/main.jsx"></script>
+</body>
+  
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container"> <!-- Adds padding and centers content -->
+      <a class="navbar-brand" href="/">
+        <img src="assets/Logos/blue.png" style="width: 110px; height: 81px;" alt="Brainybucks Consultants Logo">
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="What-we-do.html">What We Do</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#what-we-offer">How We Help</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="Contact.html">Contact Us</a>
+          </li>
+        </ul>
+      </div>
+    </div> <!-- End container -->
+  </nav>
+  
+<section class="py-5" style="background-color: #F5F3FF;">
+    <div class="container">
+      <div class="row align-items-center">
+        <!-- Left Side: Text Content -->
+        <div class="col-lg-6">
+          <h2 class="fw-bold" style="color: #6f42c1;">Financial Stuff Simplified!</h2>
+          <h3 class="fw-semibold mb-3" style="color: #111;">DIY Financial Plan (it's not hard!)</h3>
+
+          <a href="#" class="btn-primary-brainybucks w-30 py-2" style="background: linear-gradient(135deg, #7C3AED, #a04be1); border-color: white; border-radius: 30px;">Contact us now</a>
+
+        </div>
+  
+        <!-- Right Side: Image -->
+        <div class="col-lg-6 text-center position-relative">
+          <img src="assets/Logos/Indicators of financial growth and success.svg" class="img-fluid shadow-lg" style="max-width: 300px; transform: rotate(-8deg); position: relative; z-index: 2; border-radius: 20px;" alt="Guide Cover">
+          
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  
+        <div class="container py-5">
+            <h2 class="text-center text-primary-brainybucks mb-4">What We Do</h2>
+            <p class="lead text-center mb-5">Brainybucks Consultants are qualified and experienced financial professionals who help you use your brain to help yourself.</p>
+            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4"> <!-- Changed to 3 columns -->
+                <div class="col">
+                    <div class="feature-card h-100">
+                        <img src="assets/section1/Adding money to savings.svg" alt="Uncover Money Goals" class="mb-3" style="width: 150px; height: 150px;">
+                        <h3>Uncover Money Goals</h3>
+                        <p>Learn about uncovering your money goals and start investing in your life.</p>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="feature-card h-100">
+                        <img src="assets/section1/Graphs and calculator for financial planning.svg" alt="Financial Education" class="mb-3" style="width: 150px; height: 150px;">
+                        <h3>Financial Education</h3>
+                        <p>Understand how the financial world really works, beyond the marketing.</p>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="feature-card h-100">
+                        <img src="assets/section1/young people students.svg" alt="DIY Financial Plan" class="mb-3" style="width: 150px; height: 150px;">
+                        <h3>DIY Financial Plan</h3>
+                        <p>Learn how to create and manage your own financial plan effectively.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <section class="py-5 bg-light">
+            <div class="container">
+                <div class="row g-4 align-items-center">
+                    
+                    <!-- Channel Info + Subscribe -->
+                    <div class="col-md-4 text-center">
+                        <!-- Section Heading -->
+                        <h2 class="mb-4">Watch & Subscribe</h2>
+
+                        <!-- Channel Icon -->
+                        <img src="assets/Logos/youtube.jpg" 
+                             class="rounded-circle mb-3" 
+                             width="100" height="100" alt="Channel Icon">
+                        
+                        <!-- Channel Name -->
+                        <h5 class="mb-2">Financial Sauce</h5>
+                        
+                        <!-- Subscribe Button -->
+                        <div class="mb-3">
+                            <div class="g-ytsubscribe" 
+                                 data-channelid="YOUR_CHANNEL_ID" 
+                                 data-layout="default" 
+                                 data-count="default">
+                            </div>
+                        </div>
+
+                        <p class="text-muted">Subscribe for weekly videos on Financial Stuff!</p>
+                    </div>
+
+                    <!-- Video 1 -->
+                    <div class="col-md-4">
+                        <div class="ratio ratio-16x9">
+                            <iframe src="https://www.youtube.com/embed/5hnXRxVI_lU" allowfullscreen autoplay="1"></iframe>
+                        </div>
+                    </div>
+
+                    <!-- Video 2 -->
+                    <div class="col-md-4">
+                        <div class="ratio ratio-16x9">
+                            <iframe src="https://www.youtube.com/embed/ayvYWfYKDUc" allowfullscreen autoplay="1"></iframe>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+          
+      
+<section id="what-we-offer" class="container py-5">
+    <div class="row g-4">
+        <!-- What We Offer -->
+        <div class="col-md-4">
+            <div class="bg-custom-white text-black p-4 h-100 d-flex flex-column justify-content-between">
+                <h2 class="h5 fw-bold mt-4">What We Offer</h2>
+            </div>
+        </div>
+
+        <!-- Contact Us -->
+        <div class="col-md-4">
+            <div class="bg-custom-lavender text-black p-4 h-100 d-flex flex-column justify-content-between">
+                <h2 class="h5 fw-bold mt-4">Contact us &gt;</h2>
+                <p class="small">
+                    Talk to a real human. We're a 100% profit-for-purpose business dedicated to helping you succeed.
+                    Brainybucks empowers everyone, everywhere to develop a growth mindset about their finances.
+                </p>
+                <div class="mt-auto pt-3">
+                    <img src="assets/Fact Find/1.svg" alt="Contact illustration" class="img-fluid svg-small rounded-3 w-100">
+                </div>
+            </div>
+        </div>
+
+        <!-- Fact Find -->
+        <div class="col-md-4">
+            <div class="bg-custom-lavender text-black p-4 h-100 d-flex flex-column justify-content-between">
+                <h2 class="h5 fw-bold mt-4">Fact find &gt;</h2>
+                <p class="small">
+                    We demystify and simplify financial concepts so anyone can DIY their financial planning.
+                </p>
+                <ul class="small mb-3">
+                    <li>Serving clients aged 7 to 700 years old</li>
+                    <li>Personalized guidance for your unique situation</li>
+                </ul>
+                <p class="small">
+                    When you contact Brainybucks Consultants, we listen carefully and direct you to practical, actionable solutions.
+                </p>
+                <div class="mt-auto pt-3">
+                    <img src="assets/Fact Find/2.svg" alt="Fact find illustration" class="img-fluid svg-small rounded-3 w-100">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+          
+
+    <section class="bg-primary-brainybucks py-5">
+        <div class="container text-center text-white py-5">
+            <h2 class="display-6 fw-normal mb-3">Take Control of Your Financial Life!</h2>
+            <p class="lead fw-normal mb-4">Everyone has the same 168 hours in a week. Start your journey today!</p>
+            <a href="#" class="btn-primary-brainybucks">Get Started Now</a>
+        </div>
+    <div class="waves">
+        <div class="wave" id="wave1"></div>
+        <div class="wave" id="wave2"></div>
+        <div class="wave" id="wave3"></div>
+        <div class="wave" id="wave4"></div>
+    </div>
+</section>
+    <footer class="footer">
+        <!-- Logo -->
+        <div class="logo">
+            <img id = "logo" src="assets/Logos/logo2.png" alt="BrainyBucks Logo" style="max-width: 65px;">
+        </div>
+
+        <!-- Social Links -->
+        <div class="socials">
+            <a href="https://www.linkedin.com/in/hae-chung-0a08b09/" target="_blank">
+                <img src="assets/footer/linkedin.svg" width="24" height="24" alt="LinkedIn">
+            </a>
+            <a href="#" target="_blank">
+                <img src="assets/footer/facebook.svg" width="24" height="24" alt="Facebook">
+            </a>
+            <a href="#" target="_blank">
+                <img src="assets/footer/twitter.svg" width="24" height="24" alt="Twitter">
+            </a>
+            <a href="https://www.youtube.com/@FinancialSauc" target="_blank">
+                <img src="assets/footer/youtube.svg" width="24" height="24" alt="YouTube">
+            </a>
+        </div>
+
+        <!-- Navigation Links -->
+        <div class="links">
+            <ul>
+                <li>
+                    <h2>Quick Links</h2>
+                </li>
+                <li><a href="#">What We Do</a></li>
+                <li><a href="#">How BrainyBucks Helps</a></li>
+                <li><a href="#">Step-by-Step Financial Guide</a></li>
+            </ul>
+            <ul>
+                <li>
+                    <h2>Services</h2>
+                </li>
+                <li><a href="#">Financial Planning</a></li>
+                <li><a href="#">Workshops</a></li>
+                <li><a href="#">Consultations</a></li>
+            </ul>
+            <ul>
+                <li>
+                    <h2>Resources</h2>
+                </li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">FAQs</a></li>
+                <li><a href="#">Case Studies</a></li>
+            </ul>
+            <ul>
+                <li>
+                    <h2>Contact</h2>
+                </li>
+                <li><a href="#">Email Us</a></li>
+                <li><a href="#">Call Us</a></li>
+                <li><a href="#">Visit Us</a></li>
+            </ul>
+        </div>
+    </footer>
+</html>
+
