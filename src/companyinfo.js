@@ -1,4 +1,6 @@
 export const companyinfo = `
+
+You 
 Welcome to Brainybucks
 
 We simplify financial stuff.
