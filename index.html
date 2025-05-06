@@ -108,13 +108,77 @@
         <!-- React content will render here -->
     </div>
     <script type="module" src="/src/main.jsx"></script>
+    <script type="module">
+        import { auth } from "./firebase.js";
+        import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-auth.js";
+      
+        const profileLink = document.querySelector("a[href='signup.html']");
+      
+        onAuthStateChanged(auth, (user) => {
+          if (user && user.emailVerified) {
+            // Redirect link to actual profile if user is logged in
+            profileLink.href = "profile.html";
+          } else {
+            // Redirect to signup only if not logged in
+            profileLink.href = "signup.html";
+          }
+        });
+      </script>
+<script type="module">
+    import { auth, db } from "./firebase.js";
+    import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-auth.js";
+    import { doc, getDoc } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js";
+  
+    const greetingEl = document.getElementById("greeting");
+  
+    function getGreeting(hour) {
+      if (hour < 12) return "Good morning";
+      else if (hour < 17) return "Good afternoon";
+      else return "Good evening";
+    }
+  
+    onAuthStateChanged(auth, async (user) => {
+      if (user && user.emailVerified) {
+        const docRef = doc(db, "users", user.uid);
+        const docSnap = await getDoc(docRef);
+        const name = docSnap.exists() ? docSnap.data().name : "there";
+  
+        const hour = new Date().getHours();
+        const greeting = getGreeting(hour);
+  
+        greetingEl.innerText = `${greeting}, ${name}!`;
+      }
+    });
+  </script>
+
+<script type="module">
+    import { auth } from './firebase.js';
+    import { onAuthStateChanged } from 'https://www.gstatic.com/firebasejs/9.6.1/firebase-auth.js';
+  
+    const adminEmail = "admin@example.com";
+  
+    onAuthStateChanged(auth, user => {
+      if (user && user.email === adminEmail) {
+        const adminLink = document.createElement("a");
+        adminLink.href = "admin-events.html";
+        adminLink.classList = "nav-link";
+        adminLink.textContent = "Manage Events";
+        document.getElementById("admin-link-container").appendChild(adminLink);
+      }
+    });
+  </script>
+  
+        
 </body>
   
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <div class="container"> <!-- Adds padding and centers content -->
-      <a class="navbar-brand" href="/">
-        <img src="assets/Logos/blue.png" style="width: 110px; height: 81px;" alt="Brainybucks Consultants Logo">
-      </a>
+    <div class="container d-flex align-items-center gap-3">
+        <a class="navbar-brand d-flex align-items-center" href="/">
+          <img src="assets/Logos/blue.png" style="width: 140px; height: 100px;" alt="Brainybucks Consultants Logo">
+          <span id="greeting" class="ms-3 fs-5 fw-semibold" style="color: #6f42c1;"></span>
+        </a>
+      
+      
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
         aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -128,12 +192,22 @@
           <li class="nav-item">
             <a class="nav-link" href="#what-we-offer">How We Help</a>
           </li>
+
+          <li class="nav-item">
+          <a class="nav-link" href="events.html">Events</a>
+        </li>
+        
           <li class="nav-item">
             <a class="nav-link" href="Contact.html">Contact Us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="signup.html">Profile</a>
           </li>
         </ul>
       </div>
     </div> <!-- End container -->
+   
+
   </nav>
   
 <section class="py-5" style="background-color: #F5F3FF;">

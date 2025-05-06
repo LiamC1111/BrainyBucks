@@ -1,4 +1,4 @@
-export const companyinfo = `
+export const companyinfo = `deliver short responses only
 Welcome to Brainybucks
 
 We simplify financial stuff.
