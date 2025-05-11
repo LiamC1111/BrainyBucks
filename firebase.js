@@ -1,17 +1,17 @@
-
 // firebase.js
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js";
 import { getAuth } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-auth.js";
 import { getFirestore } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js";
 
+// Firebase configuration using environment variables
 const firebaseConfig = {
-  apiKey: "AIzaSyD3F0SKl5WYVIzIRSevQTtX2X30SvspVEM",
-  authDomain: "brainybucks-d8c0f.firebaseapp.com",
-  projectId: "brainybucks-d8c0f",
-  storageBucket: "brainybucks-d8c0f.firebasestorage.app",
-  messagingSenderId: "236075202641",
-  appId: "1:236075202641:web:fa8f5370e467b0f2cea070",
-  measurementId: "G-Y7S4LRCLR5"
+  apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
+  authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
+  projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
+  storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
+  appId: import.meta.env.VITE_FIREBASE_APP_ID,
+  measurementId: import.meta.env.VITE_FIREBASE_MEASUREMENT_ID,
 };
 
 const app = initializeApp(firebaseConfig);
