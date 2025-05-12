@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Events – BrainyBucks</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/global.css" />
+  <link rel="stylesheet" href="css/navbar.css" />
+  <link rel="stylesheet" href="css/footer.css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+
+  <style>
+    body {
+      font-family: 'Quicksand', sans-serif;
+      background-color: #f5f3ff;
+      padding-top: 7rem;
+    }
+
+    #eventsGrid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      padding-bottom: 3rem;
+    }
+
+    .event-card {
+      background: white;
+      border-radius: 16px;
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
+      overflow: hidden;
+      transition: transform 0.3s ease;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .event-card:hover {
+      transform: translateY(-8px);
+    }
+
+    .event-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .event-card .card-body {
+      padding: 1.2rem;
+      flex-grow: 1;
+    }
+
+    .event-card h5 {
+      color: #6f42c1;
+      font-weight: bold;
+    }
+
+    .event-card p {
+      font-size: 0.95rem;
+      color: #333;
+    }
+
+    .admin-controls button {
+      margin-right: 10px;
+    }
+
+    #addEventForm {
+      display: none;
+      margin-bottom: 2rem;
+    }
+
+    .waves {
+    position: absolute;
+    bottom: -20px; /* Move the waves 20px lower */
+    left: 0;
+    width: 100%;
+    height: 100px;
+    overflow: hidden;
+    line-height: 0;
+    z-index: 1; /* Ensure it appears above the section */
+}
+
+.wave {
+    position: absolute;
+    width: 100%;
+    height: 100px;
+    background: url('assets/footer/wave.png');
+    background-size: 1000px 100px;
+}
+
+.wave#wave1 {
+    z-index: 1000;
+    opacity: 1;
+    bottom: 0;
+    animation: animateWave01 4s linear infinite;
+}
+
+.wave#wave2 {
+    z-index: 999;
+    opacity: 0.5;
+    bottom: 10px;
+    animation: animateWave02 5s linear infinite;
+}
+
+.wave#wave3 {
+    z-index: 998;
+    opacity: 0.5;
+    bottom: 0;
+    animation: animateWave03 6s linear infinite;
+}
+
+.wave#wave4 {
+    z-index: 997;
+    opacity: 0.25;
+    bottom: 0;
+    animation: animateWave04 7s linear infinite;
+}
+
+@keyframes animateWave01 {
+    0% {
+        background-position-x: 1000px;
+    }
+    100% {
+        background-position-x: 0;
+    }
+}
+
+@keyframes animateWave02 {
+    0% {
+        background-position-x: 0;
+    }
+    100% {
+        background-position-x: 1000px;
+    }
+}
+
+@keyframes animateWave03 {
+    0% {
+        background-position-x: 0;
+    }
+    100% {
+        background-position-x: -1000px;
+    }
+}
+
+@keyframes animateWave04 {
+    0% {
+        background-position-x: 0;
+    }
+    100% {
+        background-position-x: -1000px;
+    }
+
+}
+
+/* Navbar logo adjustment */
+.logo-img {
+    max-width: 120px;
+    height: auto;
+    transition: all 0.3s ease;
+}
+
+@media (max-width: 768px) {
+    .logo-img {
+        max-width: 100px;
+        height: auto;
+    }
+
+    .navbar-toggler {
+        border: none;
+        outline: none;
+    }
+
+    .navbar-toggler-icon {
+        bbackground-color: none;
+        border-radius: 5px;
+    }
+
+    .navbar-nav .nav-link {
+        font-size: 1.2rem;
+        padding: 0.5rem 1rem;
+    }
+
+    .navbar-collapse {
+        background-color: #f5f3ff;
+        padding: 0.5rem;
+        border-radius: 10px;
+        width: 100%;
+    }
+
+    .navbar-collapse.show {
+        display: block !important;
+    }
+}
+
+@media (max-width: 576px) {
+    .logo-img {
+        max-width: 80px;
+        height: auto;
+    }
+
+    .navbar-nav .nav-link {
+        font-size: 1rem;
+        padding: 0.5rem 0.75rem;
+    }
+}
+
+/* Navbar logo adjustment */
+.logo-img {
+    max-width: 120px;
+    height: auto;
+    transition: all 0.3s ease;
+}
+
+@media (max-width: 768px) {
+    .logo-img {
+        max-width: 100px;
+        height: auto;
+    }
+
+    .navbar-toggler {
+        border: none;
+        outline: none;
+    }
+
+    .navbar-toggler-icon {
+        background-color: none;
+        border-radius: 5px;
+    }
+
+    .navbar-nav .nav-link {
+        font-size: 1.2rem;
+        padding: 0.5rem 1rem;
+    }
+
+    .navbar-collapse {
+        background-color: #f5f3ff;
+        padding: 0.5rem;
+        border-radius: 10px;
+        width: 100%;
+    }
+
+    .navbar-collapse.show {
+        display: block !important;
+    }
+}
+
+@media (max-width: 576px) {
+    .logo-img {
+        max-width: 80px;
+        height: auto;
+    }
+
+    .navbar-nav .nav-link {
+        font-size: 1rem;
+        padding: 0.5rem 0.75rem;
+    }
+}
+
+
+  </style>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+    <div class="container d-flex align-items-center gap-3">
+        <a class="navbar-brand d-flex align-items-center" href="/">
+            <img src="assets/Logos/blue.png" class="logo-img" alt="Brainybucks Consultants Logo">
+            <span id="greeting" class="ms-3 fs-5 fw-semibold" style="color: #6f42c1;"></span>
+        </a>
+        
+        <!-- Toggle button for mobile -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Collapsible navbar -->
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+            <ul class="navbar-nav">
+
+               <li class="nav-item">
+                <a class="nav-link" href="index.html">Home</a>
+               </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="What-we-do.html">What We Do</a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link" href="events.html">Events</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Contact.html">Contact Us</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="signup.html">Profile</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+  <div class="container">
+    <h2 class="mb-4 text-center text-primary fw-bold">Upcoming Events</h2>
+
+    <div class="mb-4 text-end" id="admin-signups-button-container" style="display: none;">
+      <a href="admin-signups.html" class="btn btn-outline-primary">View All Signups</a>
+    </div>
+
+    <div id="addEventForm" class="p-3 bg-white rounded shadow-sm mb-4">
+      <h4 class="mb-3">Add New Event</h4>
+      <input type="text" id="titleInput" placeholder="Event Title" class="form-control mb-2" />
+      <input type="text" id="imageInput" placeholder="Image URL" class="form-control mb-2" />
+      <textarea id="descInput" placeholder="Description" class="form-control mb-2"></textarea>
+      <input type="date" id="dateInput" class="form-control mb-2" />
+      <button id="addEventBtn" class="btn btn-success">Add Event</button>
+    </div>
+
+    <div id="eventsGrid"></div>
+  </div>
+
+  <script type="module">
+    import { auth, db } from './firebase.js';
+    import {
+      onAuthStateChanged
+    } from 'https://www.gstatic.com/firebasejs/9.6.1/firebase-auth.js';
+    import {
+      collection, getDocs, addDoc, deleteDoc, updateDoc, doc, Timestamp, setDoc, getDoc
+    } from 'https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js';
+
+    const eventsGrid = document.getElementById("eventsGrid");
+    const addEventForm = document.getElementById("addEventForm");
+    const addBtn = document.getElementById("addEventBtn");
+    const titleInput = document.getElementById("titleInput");
+    const imageInput = document.getElementById("imageInput");
+    const descInput = document.getElementById("descInput");
+    const dateInput = document.getElementById("dateInput");
+    const signupBtnContainer = document.getElementById("admin-signups-button-container");
+
+    const adminEmail = "shenukagunathilake7@gmail.com";
+    let isAdmin = false;
+    let currentUser = null;
+
+    onAuthStateChanged(auth, async (user) => {
+      if (!user) return;
+      currentUser = user;
+
+      isAdmin = user.email === adminEmail;
+      if (isAdmin) {
+        addEventForm.style.display = "block";
+        signupBtnContainer.style.display = "block";
+      }
+
+      fetchEvents();
+    });
+
+    async function fetchEvents() {
+      const snapshot = await getDocs(collection(db, "events"));
+      eventsGrid.innerHTML = "";
+
+      for (const docSnap of snapshot.docs) {
+        const data = docSnap.data();
+        const dateStr = data.date?.toDate().toLocaleDateString() || "TBD";
+        const eventId = docSnap.id;
+
+        const card = document.createElement("div");
+        card.className = "event-card";
+        card.innerHTML = `
+          <img src="${data.imageURL}" alt="${data.title}" />
+          <div class="card-body">
+            <h5>${data.title}</h5>
+            <p>${data.description}</p>
+            <p><strong>Date:</strong> ${dateStr}</p>
+          </div>
+        `;
+
+        const joinBtn = document.createElement("button");
+        joinBtn.className = "btn btn-primary m-3";
+        joinBtn.textContent = "Join Event";
+
+        if (currentUser) {
+          const userId = currentUser.uid;
+          const signupRef = doc(db, "events", eventId, "signups", userId);
+          const signupSnap = await getDoc(signupRef);
+
+          if (signupSnap.exists()) {
+            joinBtn.classList.remove("btn-primary");
+            joinBtn.classList.add("btn-success");
+            joinBtn.textContent = "Thank you! You successfully signed up for this event";
+            joinBtn.disabled = true;
+          } else {
+            joinBtn.addEventListener("click", async () => {
+              const userRef = doc(db, "users", userId);
+              const userSnap = await getDoc(userRef);
+              const userData = userSnap.exists() ? userSnap.data() : {};
+
+              await setDoc(signupRef, {
+                name: userData.name || "Anonymous",
+                email: currentUser.email,
+                phone: userData.phone || "N/A",
+                joinedAt: Timestamp.now()
+              });
+
+              joinBtn.classList.remove("btn-primary");
+              joinBtn.classList.add("btn-success");
+              joinBtn.textContent = "Thank you! You successfully signed up for this event";
+              joinBtn.disabled = true;
+            });
+          }
+
+          card.appendChild(joinBtn);
+        }
+
+        if (isAdmin) {
+          const adminBtns = document.createElement("div");
+          adminBtns.className = "admin-controls m-3";
+          adminBtns.innerHTML = `
+            <button class="btn btn-warning btn-sm">Edit</button>
+            <button class="btn btn-danger btn-sm">Delete</button>
+          `;
+
+          const [editBtn, deleteBtn] = adminBtns.querySelectorAll("button");
+
+          editBtn.addEventListener("click", () => {
+            const newTitle = prompt("New title:", data.title);
+            const newDesc = prompt("New description:", data.description);
+            if (newTitle && newDesc) {
+              updateDoc(doc(db, "events", eventId), {
+                title: newTitle,
+                description: newDesc
+              });
+              fetchEvents();
+            }
+          });
+
+          deleteBtn.addEventListener("click", async () => {
+            if (confirm("Delete this event?")) {
+              await deleteDoc(doc(db, "events", eventId));
+              fetchEvents();
+            }
+          });
+
+          card.appendChild(adminBtns);
+        }
+
+        eventsGrid.appendChild(card);
+      }
+    }
+
+    addBtn.addEventListener("click", async () => {
+      const title = titleInput.value.trim();
+      const imageURL = imageInput.value.trim();
+      const description = descInput.value.trim();
+      const date = new Date(dateInput.value);
+
+      if (!title || !imageURL || !description || isNaN(date)) {
+        alert("Please fill all fields correctly.");
+        return;
+      }
+
+      await addDoc(collection(db, "events"), {
+        title,
+        imageURL,
+        description,
+        date: Timestamp.fromDate(date),
+        createdBy: auth.currentUser.email
+      });
+
+      titleInput.value = "";
+      imageInput.value = "";
+      descInput.value = "";
+      dateInput.value = "";
+
+      fetchEvents();
+    });
+  </script>
+
+<script type="module" src="./scripts/session.js"></script>
+  
+</body>
+
+<section class="bg-primary-brainybucks py-5">
+  <div class="container text-center text-white py-5">
+      <h2 class="display-6 fw-normal mb-3">Take Control of Your Financial Life!</h2>
+      <p class="lead fw-normal mb-4">Everyone has the same 168 hours in a week. Start your journey today!</p>
+      
+  </div>
+<div class="waves">
+  <div class="wave" id="wave1"></div>
+  <div class="wave" id="wave2"></div>
+  <div class="wave" id="wave3"></div>
+  <div class="wave" id="wave4"></div>
+</div>
+</section>
+<footer class="footer">
+  <!-- Logo -->
+  <div class="logo">
+      <img id = "logo" src="assets/Logos/logo2.png" alt="BrainyBucks Logo" style="max-width: 65px;">
+  </div>
+
+  <!-- Social Links -->
+  <div class="socials">
+      <a href="https://www.linkedin.com/in/hae-chung-0a08b09/" target="_blank">
+          <img src="assets/footer/linkedin.svg" width="24" height="24" alt="LinkedIn">
+      </a>
+      <a href="#" target="_blank">
+          <img src="assets/footer/facebook.svg" width="24" height="24" alt="Facebook">
+      </a>
+      <a href="#" target="_blank">
+          <img src="assets/footer/twitter.svg" width="24" height="24" alt="Twitter">
+      </a>
+      <a href="https://www.youtube.com/@FinancialSauc" target="_blank">
+          <img src="assets/footer/youtube.svg" width="24" height="24" alt="YouTube">
+      </a>
+  </div>
+
+  <!-- Navigation Links -->
+  <div class="links">
+      <ul>
+          <li>
+              <h2>Quick Links</h2>
+          </li>
+          <li><a href="#">What We Do</a></li>
+          <li><a href="#">How BrainyBucks Helps</a></li>
+          <li><a href="#">Step-by-Step Financial Guide</a></li>
+      </ul>
+      <ul>
+          <li>
+              <h2>Services</h2>
+          </li>
+          <li><a href="#">Financial Planning</a></li>
+          <li><a href="#">Workshops</a></li>
+          <li><a href="#">Consultations</a></li>
+      </ul>
+      <ul>
+          <li>
+              <h2>Resources</h2>
+          </li>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">FAQs</a></li>
+          <li><a href="#">Case Studies</a></li>
+      </ul>
+      <ul>
+          <li>
+              <h2>Contact</h2>
+          </li>
+          <li><a href="#">Email Us</a></li>
+          <li><a href="#">Call Us</a></li>
+          <li><a href="#">Visit Us</a></li>
+      </ul>
+  </div>
+</footer>
+</html>

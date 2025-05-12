@@ -1,6 +1,8 @@
 /* Navbar Links */
 .navbar-nav .nav-link {
-    position: relative; /* Required for the ::after pseudo-element */
+    position: relative;
+    font-size: 18px;
+    font-weight: 250; /* Required for the ::after pseudo-element */
     color: #4554d3; /* Default link color */
     text-decoration: none; /* Remove default underline */
     padding-bottom: 5px; /* Add space for the underline */
