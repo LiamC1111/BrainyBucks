@@ -11,7 +11,7 @@ const App = () => {
     hideinChat: true,
     role: "model", 
     text: companyinfo }]); //Chat history state
-  const [showChatBot, setShowChatbot] = useState([false]); //Button that toggles the chat window
+  const [showChatBot, setShowChatbot] = useState(false); //Button that toggles the chat window
   const chatBodyRef = useRef();
   //Helper function to update chat history with bot response
   const generateBotResponse = async (history) => {
