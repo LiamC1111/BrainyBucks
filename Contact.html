@@ -2,10 +2,18 @@
 <html lang="en">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BrainyBucks - Financial Consulting</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="css/global.css" />
+    <link rel="stylesheet" href="css/navbar.css" />
+    <link rel="stylesheet" href="css/footer.css" />
+    <link rel="stylesheet" href="css/sections.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,1,0&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/global.css">
     <link rel="stylesheet" href="css/navbar.css">
     <link rel="stylesheet" href="css/sections.css">
@@ -13,155 +21,274 @@
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    
-    
+  
+  
     <style>
-body {
-    font-family: 'Adelle Sans', 'Quicksand', sans-serif;
-}
-.waves {
-    position: absolute;
-    bottom: -20px; /* Move the waves 20px lower */
-    left: 0;
-    width: 100%;
-    height: 100px;
-    overflow: hidden;
-    line-height: 0;
-    z-index: 1; /* Ensure it appears above the section */
-}
-
-.wave {
-    position: absolute;
-    width: 100%;
-    height: 100px;
-    background: url('assets/footer/wave.png');
-    background-size: 1000px 100px;
-}
-
-.wave#wave1 {
-    z-index: 1000;
-    opacity: 1;
-    bottom: 0;
-    animation: animateWave01 4s linear infinite;
-}
-
-.wave#wave2 {
-    z-index: 999;
-    opacity: 0.5;
-    bottom: 10px;
-    animation: animateWave02 5s linear infinite;
-}
-
-.wave#wave3 {
-    z-index: 998;
-    opacity: 0.5;
-    bottom: 0;
-    animation: animateWave03 6s linear infinite;
-}
-
-.wave#wave4 {
-    z-index: 997;
-    opacity: 0.25;
-    bottom: 0;
-    animation: animateWave04 7s linear infinite;
-}
-
-@keyframes animateWave01 {
-    0% {
-        background-position-x: 1000px;
-    }
-    100% {
-        background-position-x: 0;
-    }
-}
-
-@keyframes animateWave02 {
-    0% {
-        background-position-x: 0;
-    }
-    100% {
-        background-position-x: 1000px;
-    }
-}
-
-@keyframes animateWave03 {
-    0% {
-        background-position-x: 0;
-    }
-    100% {
-        background-position-x: -1000px;
-    }
-}
-
-@keyframes animateWave04 {
-    0% {
-        background-position-x: 0;
-    }
-    100% {
-        background-position-x: -1000px;
-    }
-}
-
-/* Adjust the navbar brand logo size on smaller screens */
-.navbar-brand img {
-    max-width: 140px;
-    height: auto;
-}
-
-@media (max-width: 768px) {
-    .navbar-brand img {
-        max-width: 100px;
-        height: auto;
-    }
-
-    .navbar-toggler {
-        border: none;
-    }
-
-    .navbar-toggler-icon {
-        color: #6f42c1;
-        background-color: transparent;
-    }
-
-    .navbar-nav .nav-link {
-        font-size: 1.2rem;
-        padding: 0.75rem 1rem;
-    }
-
-    .navbar-collapse {
+      body {
+        font-family: 'Quicksand', sans-serif;
         background-color: #f5f3ff;
-        padding: 0.5rem;
-        border-radius: 10px;
-    }
-}
-
-@media (max-width: 576px) {
-    .navbar-brand img {
-        max-width: 80px;
-        height: auto;
-    }
-
-    .navbar-nav .nav-link {
-        font-size: 1rem;
-    }
-}
-
-body {
-    padding-top: 80px; /* Adjust based on the navbar height */
-}
-
-@media (max-width: 768px) {
-    body {
-        padding-top: 100px; /* More padding for mobile view */
-    }
-}
-
-.fixed-top {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 1030; /* Keep navbar on top */
-}
+        padding-top: 7rem;
+      }
+  
+      #eventsGrid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+        padding-bottom: 3rem;
+      }
+  
+      .event-card {
+        background: white;
+        border-radius: 16px;
+        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
+        overflow: hidden;
+        transition: transform 0.3s ease;
+        display: flex;
+        flex-direction: column;
+      }
+  
+      .event-card:hover {
+        transform: translateY(-8px);
+      }
+  
+      .event-card img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+      }
+  
+      .event-card .card-body {
+        padding: 1.2rem;
+        flex-grow: 1;
+      }
+  
+      .event-card h5 {
+        color: #6f42c1;
+        font-weight: bold;
+      }
+  
+      .event-card p {
+        font-size: 0.95rem;
+        color: #333;
+      }
+  
+      .admin-controls button {
+        margin-right: 10px;
+      }
+  
+      #addEventForm {
+        display: none;
+        margin-bottom: 2rem;
+      }
+  
+      .waves {
+      position: absolute;
+      bottom: -20px; /* Move the waves 20px lower */
+      left: 0;
+      width: 100%;
+      height: 100px;
+      overflow: hidden;
+      line-height: 0;
+      z-index: 1; /* Ensure it appears above the section */
+  }
+  
+  .wave {
+      position: absolute;
+      width: 100%;
+      height: 100px;
+      background: url('assets/footer/wave.png');
+      background-size: 1000px 100px;
+  }
+  
+  .wave#wave1 {
+      z-index: 1000;
+      opacity: 1;
+      bottom: 0;
+      animation: animateWave01 4s linear infinite;
+  }
+  
+  .wave#wave2 {
+      z-index: 999;
+      opacity: 0.5;
+      bottom: 10px;
+      animation: animateWave02 5s linear infinite;
+  }
+  
+  .wave#wave3 {
+      z-index: 998;
+      opacity: 0.5;
+      bottom: 0;
+      animation: animateWave03 6s linear infinite;
+  }
+  
+  .wave#wave4 {
+      z-index: 997;
+      opacity: 0.25;
+      bottom: 0;
+      animation: animateWave04 7s linear infinite;
+  }
+  
+  @keyframes animateWave01 {
+      0% {
+          background-position-x: 1000px;
+      }
+      100% {
+          background-position-x: 0;
+      }
+  }
+  
+  @keyframes animateWave02 {
+      0% {
+          background-position-x: 0;
+      }
+      100% {
+          background-position-x: 1000px;
+      }
+  }
+  
+  @keyframes animateWave03 {
+      0% {
+          background-position-x: 0;
+      }
+      100% {
+          background-position-x: -1000px;
+      }
+  }
+  
+  @keyframes animateWave04 {
+      0% {
+          background-position-x: 0;
+      }
+      100% {
+          background-position-x: -1000px;
+      }
+  
+  }
+  
+  /* Navbar logo adjustment */
+  .logo-img {
+      max-width: 120px;
+      height: auto;
+      transition: all 0.3s ease;
+  }
+  
+  @media (max-width: 768px) {
+      .logo-img {
+          max-width: 100px;
+          height: auto;
+      }
+  
+      .navbar-toggler {
+          border: none;
+          outline: none;
+      }
+  
+      .navbar-toggler-icon {
+          bbackground-color: none;
+          border-radius: 5px;
+      }
+  
+      .navbar-nav .nav-link {
+          font-size: 1.2rem;
+          padding: 0.5rem 1rem;
+      }
+  
+      .navbar-collapse {
+          background-color: #f5f3ff;
+          padding: 0.5rem;
+          border-radius: 10px;
+          width: 100%;
+      }
+  
+      .navbar-collapse.show {
+          display: block !important;
+      }
+  }
+  
+  @media (max-width: 576px) {
+      .logo-img {
+          max-width: 80px;
+          height: auto;
+      }
+  
+      .navbar-nav .nav-link {
+          font-size: 1rem;
+          padding: 0.5rem 0.75rem;
+      }
+  }
+  
+  /* Navbar Logo */
+  .navbar-brand img {
+          max-width: 140px;
+          height: auto;
+      }
+      
+      .logo-img {
+          max-width: 120px;
+          height: auto;
+          transition: all 0.3s ease;
+      }
+      
+      /* Navbar Item Styling */
+      .navbar-nav .nav-link {
+          font-size: 1.2rem; /* Increased font size */
+          margin: 0 15px; /* Spacing between items */
+          font-weight: 500;
+          transition: color 0.3s ease;
+      }
+      
+      .navbar-nav .nav-link:hover {
+          color: #6f42c1;
+      }
+  
+      body {
+          padding-top: 90px;
+      }
+  
+  @media (max-width: 768px) {
+      .logo-img {
+          max-width: 100px;
+          height: auto;
+      }
+  
+      .navbar-toggler {
+          border: none;
+          outline: none;
+      }
+  
+      .navbar-toggler-icon {
+          background-color: none;
+          border-radius: 5px;
+      }
+  
+      .navbar-nav .nav-link {
+          font-size: 1.2rem;
+          padding: 0.5rem 1rem;
+      }
+  
+      .navbar-collapse {
+          background-color: #f5f3ff;
+          padding: 0.5rem;
+          border-radius: 10px;
+          width: 100%;
+      }
+  
+      .navbar-collapse.show {
+          display: block !important;
+      }
+  }
+  
+  @media (max-width: 576px) {
+      .logo-img {
+          max-width: 80px;
+          height: auto;
+      }
+  
+      .navbar-nav .nav-link {
+          font-size: 1rem;
+          padding: 0.5rem 0.75rem;
+      }
+  }
 
     
     </style>
@@ -173,6 +300,7 @@ body {
             <span id="greeting" class="ms-3 fs-5 fw-semibold" style="color: #6f42c1;"></span>
         </a>
         
+
         <!-- Toggle button for mobile -->
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -182,7 +310,6 @@ body {
         <!-- Collapsible navbar -->
         <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
             <ul class="navbar-nav">
-
                 <li class="nav-item">
                     <a class="nav-link" href="index.html">Home</a>
                 </li>
@@ -207,13 +334,31 @@ body {
 
 
      <!-- Hero Section -->
-     <section class="py-20 px-5">
+     <!-- <section class="py-20 px-5">
         <div class="max-w-4xl mx-auto text-center">
             <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">Contact Brainybucks – Talk to a Real Human</h1>
             <p class="text-xl text-gray-600 mb-8">No bots. No jargon. Just real people helping you take control of your money.</p>
             <p class="text-lg text-gray-600">Whether you've got questions about investing, planning your finances, or just want to chat, we'd love to hear from you. Send us a message and someone from the Brainybucks team will get back to you ASAP.</p>
         </div>
-    </section>
+    </section> -->
+
+    <section class="bg-gradient-to-r from-purple-50 to-purple-100 py-20">
+        <div class="container mx-auto px-5 text-center">
+            <div class="flex justify-center mb-6">
+                <div class="w-12 h-12 bg-purple-600 rounded-full flex items-center justify-center mr-4">
+                    <!-- Icon placeholder -->
+                </div>
+                <h1 class="text-4xl md:text-5xl font-bold text-gray-900">Contact Brainybucks – Talk to a Real Human!</h1>
+            </div>
+            <p id="loginPrompt" class="text-lg md:text-xl text-gray-700 max-w-3xl mx-auto">
+                No bots. No jargon. Just real people helping you take control of your money.
+          </p>
+          <p id="loginPrompt" class="text-lg md:text-xl text-gray-700 max-w-3xl mx-auto">
+            Whether you've got questions about investing, planning your finances, or just want to chat, we'd love to hear from you. Send us a message and someone from the Brainybucks team will get back to you ASAP.
+      </p>
+          
+        </div>
+      </section>
 
     <!-- Contact Form -->
     <section class="py-12 px-5">
