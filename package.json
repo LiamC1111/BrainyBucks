@@ -8,6 +8,10 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "aws-sdk": "^2.1692.0",
+    "body-parser": "^2.2.0",
+    "cors": "^2.8.5",
+    "express": "^5.1.0",
     "framer-motion": "^12.12.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -16,5 +20,10 @@
   "devDependencies": {
     "@vitejs/plugin-react": "^4.0.0",
     "vite": "^6.3.5"
-  }
+  },
+  "description": "This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.",
+  "main": "env.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
 }
