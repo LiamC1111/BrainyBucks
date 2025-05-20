@@ -22,4 +22,17 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Vite build and cache
+.vite
+.vite*
+/output
+/.output
+# Ignore Vite cache in all subfolders
+**/.vite
+**/.vite*
+# Ignore Vite preview output
+/.output
+# Ignore environment files
 .env
+.env.*
