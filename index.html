@@ -19,197 +19,197 @@
     
 
     
-    
-    
     <style>
-        /* Footer Waves */
-/* Ensure the waves overlap the section above */
-.waves {
-    position: absolute;
-    bottom: -20px; /* Move the waves 20px lower */
-    left: 0;
-    width: 100%;
-    height: 100px;
-    overflow: hidden;
-    line-height: 0;
-    z-index: 1; /* Ensure it appears above the section */
-}
-
-.wave {
-    position: absolute;
-    width: 100%;
-    height: 100px;
-    background: url('assets/footer/wave.png');
-    background-size: 1000px 100px;
-}
-
-.wave#wave1 {
-    z-index: 1000;
-    opacity: 1;
-    bottom: 0;
-    animation: animateWave01 4s linear infinite;
-}
-
-.wave#wave2 {
-    z-index: 999;
-    opacity: 0.5;
-    bottom: 10px;
-    animation: animateWave02 5s linear infinite;
-}
-
-.wave#wave3 {
-    z-index: 998;
-    opacity: 0.5;
-    bottom: 0;
-    animation: animateWave03 6s linear infinite;
-}
-
-.wave#wave4 {
-    z-index: 997;
-    opacity: 0.25;
-    bottom: 0;
-    animation: animateWave04 7s linear infinite;
-}
-
-@keyframes animateWave01 {
-    0% {
-        background-position-x: 1000px;
-    }
-    100% {
-        background-position-x: 0;
-    }
-}
-
-@keyframes animateWave02 {
-    0% {
-        background-position-x: 0;
-    }
-    100% {
-        background-position-x: 1000px;
-    }
-}
-
-@keyframes animateWave03 {
-    0% {
-        background-position-x: 0;
-    }
-    100% {
-        background-position-x: -1000px;
-    }
-}
-
-@keyframes animateWave04 {
-    0% {
-        background-position-x: 0;
-    }
-    100% {
-        background-position-x: -1000px;
-    }
-
-}
-
-
-
-/* Adjust the navbar brand logo size on smaller screens */
-.navbar-brand img {
-    max-width: 140px;
-    height: auto;
-}
-
-@media (max-width: 768px) {
-    .navbar-brand img {
-        max-width: 100px;
-        height: auto;
-    }
-
-    .navbar-toggler {
-        border: none;
-    }
-
-    .navbar-toggler-icon {
-        color: #6f42c1;
-        background-color: transparent;
-    }
-
-    .navbar-nav .nav-link {
-        font-size: 1.2rem;
-        padding: 0.75rem 1rem;
-    }
-
-    .navbar-collapse {
-        background-color: #f5f3ff;
-        padding: 0.5rem;
-        border-radius: 10px;
-    }
-}
-
-@media (max-width: 576px) {
-    .navbar-brand img {
-        max-width: 80px;
-        height: auto;
-    }
-
-    .navbar-nav .nav-link {
-        font-size: 1rem;
-    }
-}
-
-/* Navbar logo adjustment */
-.logo-img {
-    max-width: 120px;
-    height: auto;
-    transition: all 0.3s ease;
-}
-
-@media (max-width: 768px) {
-    .logo-img {
-        max-width: 100px;
-        height: auto;
-    }
-
-    .navbar-toggler {
-        border: none;
-        outline: none;
-    }
-
-    .navbar-toggler-icon {
-        background-color: none;
-        border-radius: 5px;
-    }
-
-    .navbar-nav .nav-link {
-        font-size: 1.2rem;
-        padding: 0.5rem 1rem;
-    }
-
-    .navbar-collapse {
-        background-color: #f5f3ff;
-        padding: 0.5rem;
-        border-radius: 10px;
+    
+    /* Footer Waves */
+    .waves {
+        position: absolute;
+        bottom: -20px;
+        left: 0;
         width: 100%;
+        height: 100px;
+        overflow: hidden;
+        line-height: 0;
+        z-index: 1;
     }
-
-    .navbar-collapse.show {
-        display: block !important;
+    
+    .wave {
+        position: absolute;
+        width: 100%;
+        height: 100px;
+        background: url('assets/footer/wave.png');
+        background-size: 1000px 100px;
     }
-}
-
-@media (max-width: 576px) {
-    .logo-img {
-        max-width: 80px;
+    
+    .wave#wave1 {
+        z-index: 1000;
+        opacity: 1;
+        bottom: 0;
+        animation: animateWave01 4s linear infinite;
+    }
+    
+    .wave#wave2 {
+        z-index: 999;
+        opacity: 0.5;
+        bottom: 10px;
+        animation: animateWave02 5s linear infinite;
+    }
+    
+    .wave#wave3 {
+        z-index: 998;
+        opacity: 0.5;
+        bottom: 0;
+        animation: animateWave03 6s linear infinite;
+    }
+    
+    .wave#wave4 {
+        z-index: 997;
+        opacity: 0.25;
+        bottom: 0;
+        animation: animateWave04 7s linear infinite;
+    }
+    
+    @keyframes animateWave01 {
+        0% { background-position-x: 1000px; }
+        100% { background-position-x: 0; }
+    }
+    
+    @keyframes animateWave02 {
+        0% { background-position-x: 0; }
+        100% { background-position-x: 1000px; }
+    }
+    
+    @keyframes animateWave03 {
+        0% { background-position-x: 0; }
+        100% { background-position-x: -1000px; }
+    }
+    
+    @keyframes animateWave04 {
+        0% { background-position-x: 0; }
+        100% { background-position-x: -1000px; }
+    }
+    
+    /* Navbar Logo */
+    .navbar-brand img {
+        max-width: 140px;
         height: auto;
     }
-
-    .navbar-nav .nav-link {
-        font-size: 1rem;
-        padding: 0.5rem 0.75rem;
+    
+    .logo-img {
+        max-width: 120px;
+        height: auto;
+        transition: all 0.3s ease;
     }
-}
+    
+    /* Navbar Item Styling */
+    .navbar-nav .nav-link {
+        font-size: 1.2rem; /* Increased font size */
+        margin: 0 15px; /* Spacing between items */
+        font-weight: 500;
+        transition: color 0.3s ease;
+    }
+    
+    .navbar-nav .nav-link:hover {
+        color: #6f42c1;
+    }
+    
+    /* Greeting Styling */
+    #greeting {
+        font-size: 1.2rem;
+        max-width: 400px;
+        white-space: normal;
+        
+    }
+    
+    /* Responsive Styling */
+    @media (max-width: 768px) {
+        .logo-img {
+            max-width: 100px;
+            height: auto;
+        }
+    
+        .navbar-nav .nav-link {
+            font-size: 1.4rem;
+            margin: 0 15px;
+        }
+    
+        #greeting {
+            font-size: 1rem;
+            max-width: 160px;
+            line-height: 1.2;
+            text-align: center;
+            white-space: normal;
+        }
+    
+        .navbar-toggler {
+            border: none;
+        }
+    
+        .navbar-toggler-icon {
+            color: #6f42c1;
+            background-color: transparent;
+        }
+    
+        .navbar-collapse {
+            background-color: #f5f3ff;
+            padding: 0.5rem;
+            border-radius: 10px;
+        }
+    }
+    
+    @media (max-width: 576px) {
+        .logo-img {
+            max-width: 80px;
+            height: auto;
+        }
+    
+        .navbar-nav .nav-link {
+            font-size: 1.2rem;
+            margin: 0 10px;
+        }
+    
+        #greeting {
+            font-size: 0.5rem;
+            max-width: 220px;
+            line-height: 1.1;
+        }
+    
+        .navbar-toggler {
+            border: none;
+            outline: none;
+        }
+    
+        .navbar-collapse {
+            background-color: #f5f3ff;
+            padding: 0.5rem;
+            border-radius: 10px;
+            width: 100%;
+        }
+    
+        .navbar-collapse.show {
+            display: block !important;
+        }
+    }
+    
+    /* Adjust the first section to not be covered by the fixed navbar */
+    body {
+        padding-top: 90px;
+    }
+    
+    @media (max-width: 768px) {
+        body {
+            padding-top: 110px;
+        }
+    }
+    
+    @media (max-width: 576px) {
+        body {
+            padding-top: 120px;
+        }
+    }
+    
 
-
-    </style> 
-
-
+</style>
 
 </head>
 <body>
@@ -289,6 +289,7 @@
             <span id="greeting" class="ms-3 fs-5 fw-semibold" style="color: #6f42c1;"></span>
         </a>
         
+
         <!-- Toggle button for mobile -->
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -330,7 +331,7 @@
           <h2 class="fw-bold" style="color: #6f42c1;">Financial Stuff Simplified!</h2>
           <h3 class="fw-semibold mb-3" style="color: #111;">DIY Financial Plan (it's not hard!)</h3>
 
-          <a href="#" class="btn-primary-brainybucks w-30 py-2" style="background: linear-gradient(135deg, #7C3AED, #a04be1); border-color: white; border-radius: 30px;">Contact us now</a>
+          <a href="Contact.html" class="btn-primary-brainybucks w-30 py-2" style="background: linear-gradient(135deg, #7C3AED, #a04be1); border-color: white; border-radius: 30px;">Contact us now</a>
 
         </div>
   
@@ -495,7 +496,7 @@
             <a href="#" target="_blank">
                 <img src="assets/footer/twitter.svg" width="24" height="24" alt="Twitter">
             </a>
-            <a href="https://www.youtube.com/@FinancialSauc" target="_blank">
+            <a href="#" target="_blank">
                 <img src="assets/footer/youtube.svg" width="24" height="24" alt="YouTube">
             </a>
         </div>
