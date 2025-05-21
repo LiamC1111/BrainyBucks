@@ -549,19 +549,34 @@
             </ul>
         </div>
     </footer>
-    <script>
-        // Mobile menu toggle functionality would go here
-        document.addEventListener('DOMContentLoaded', function() {
-            // You would add JavaScript for mobile menu toggle here
-        });
-        // Form submission handling would go here
-        document.querySelector('form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            // Here you would typically send the form data to your server
-            alert('Thank you for your message! We will get back to you soon.');
+    <script type="module">
+        import { functions } from './firebase.js';
+        import { httpsCallable } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-functions.js";
+      
+        const sendContactEmail = httpsCallable(functions, 'sendContactConfirmationEmail');
+      
+        document.querySelector('form').addEventListener('submit', async function(e) {
+          e.preventDefault();
+      
+          const name = document.getElementById('firstName').value.trim();
+          const email = document.getElementById('email').value.trim();
+      
+          if (!name || !email) {
+            alert("Please fill out your name and email.");
+            return;
+          }
+      
+          try {
+            await sendContactEmail({ name, email });
+            alert("✅ Thank you for contacting BrainyBucks! We’ve sent you a confirmation email.");
             this.reset();
+          } catch (error) {
+            console.error("❌ Error sending confirmation email:", error);
+            alert("Something went wrong. Please try again later.");
+          }
         });
-    </script>
+      </script>
+      
 
 <script type="module" src="./scripts/session.js"></script>
 </body>

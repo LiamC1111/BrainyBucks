@@ -515,12 +515,94 @@
         }
   
         if (isAdmin) {
-          // Admin edit/delete logic here (unchanged)
+          const adminBtns = document.createElement("div");
+          adminBtns.className = "admin-controls m-3";
+          adminBtns.innerHTML = `
+            <button class="btn btn-warning btn-sm edit-btn">Edit</button>
+            <button class="btn btn-danger btn-sm delete-btn">Delete</button>
+            <button class="btn btn-secondary btn-sm cancel-edit-btn" style="display:none;">Cancel</button>
+            <button class="btn btn-success btn-sm save-btn" style="display:none;">Save</button>
+          `;
+
+          const editBtn = adminBtns.querySelector(".edit-btn");
+          const deleteBtn = adminBtns.querySelector(".delete-btn");
+          const cancelEditBtn = adminBtns.querySelector(".cancel-edit-btn");
+          const saveBtn = adminBtns.querySelector(".save-btn");
+
+          // Edit form container
+          const editForm = document.createElement("div");
+          editForm.className = "edit-form";
+          editForm.style.display = "none";
+          editForm.innerHTML = `
+            <input type="text" class="edit-title form-control mb-2" placeholder="Event Title" value="${data.title}">
+            <input type="text" class="edit-image-url form-control mb-2" placeholder="Image URL" value="${data.imageURL}">
+            <textarea class="edit-description form-control mb-2" placeholder="Description">${data.description}</textarea>
+            <input type="date" class="edit-date form-control mb-2" value="${data.date?.toDate().toISOString().split('T')[0] || ''}">
+          `;
+
+          editBtn.addEventListener("click", () => {
+            editForm.style.display = "block";
+            editBtn.style.display = "none";
+            deleteBtn.style.display = "none";
+            cancelEditBtn.style.display = "inline-block";
+            saveBtn.style.display = "inline-block";
+          });
+
+          cancelEditBtn.addEventListener("click", () => {
+            editForm.style.display = "none";
+            editBtn.style.display = "inline-block";
+            deleteBtn.style.display = "inline-block";
+            cancelEditBtn.style.display = "none";
+            saveBtn.style.display = "none";
+          });
+
+          saveBtn.addEventListener("click", async () => {
+            const newTitle = editForm.querySelector(".edit-title").value;
+            const newImageURL = editForm.querySelector(".edit-image-url").value;
+            const newDescription = editForm.querySelector(".edit-description").value;
+            const newDate = new Date(editForm.querySelector(".edit-date").value);
+
+            if (!newTitle || !newImageURL || !newDescription || isNaN(newDate)) {
+              alert("Please fill all fields correctly.");
+              return;
+            }
+
+            try {
+              await updateDoc(doc(db, "events", eventId), {
+                title: newTitle,
+                imageURL: newImageURL,
+                description: newDescription,
+                date: Timestamp.fromDate(newDate)
+              });
+
+              editForm.style.display = "none";
+              editBtn.style.display = "inline-block";
+              deleteBtn.style.display = "inline-block";
+              cancelEditBtn.style.display = "none";
+              saveBtn.style.display = "none";
+
+              fetchEvents();
+            } catch (error) {
+              console.error("Error updating event: ", error);
+              alert("Failed to update event. Please try again.");
+            }
+          });
+
+          deleteBtn.addEventListener("click", async () => {
+            if (confirm("Delete this event?")) {
+              await deleteDoc(doc(db, "events", eventId));
+              fetchEvents();
+            }
+          });
+
+          card.appendChild(editForm);
+          card.appendChild(adminBtns);
         }
-  
+
         eventsGrid.appendChild(card);
       }
     }
+
   
     addBtn.addEventListener("click", async () => {
       const title = titleInput.value.trim();
