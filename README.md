@@ -12,7 +12,6 @@
 | Lucas Mangos            | 47449705   |
 | Joanna Marie Oruga      | 46414533   |
 
-
 ---
 
 ## 🧠 01. Project Overview
@@ -58,126 +57,204 @@ This platform brings together Firebase Authentication, Firestore, and SendGrid w
 - **Firebase Authentication**
 - **Cloud Firestore Database**
 - **Firebase Storage**
-- **Firebase Hosting (for dev)**
 - **SendGrid API for transactional email sending**
 
 ---
 
-## 🔐 04. Firebase Authentication Setup
+## 🔐 04. Firebase Authentication & Verification
 
-- Firebase Auth used for secure user registration, login, and email verification.
-- Email/password sign-up flow with client-side validation.
-- Email verification must be completed before accessing protected pages like `events.html`.
-- Only after verification, users can:
-  - Join events
-  - View profile page
-- Used `onAuthStateChanged()` to manage session visibility and gate content access.
-
-### ✨ Profile Page Features:
-- View:
-  - Name
-  - Phone number
-  - Email
-  
-  
-
----
-
-## 🗂️ 05. Firestore Collections
-
-- **`users/`** – Stores profile data for each authenticated user.
-- **`events/`** – Events created by the admin (title, date, image, description).
-- **`events/{eventId}/signups/`** – Tracks user signups for each event.
-
----
-
-## ✉️ 06. Email Notification System
-
-### Event Join Email (SendGrid + Firebase Functions)
-- Once a user joins an event, Firebase Cloud Function triggers a SendGrid email.
-- Personalized email template with event title and user name.
-- Sent from: `shenukagunathilake5@gmail.com` (verified sender)
-
-### Contact Form Email
-- When a user submits the contact form:
-  - Data is saved to Firestore
-  - A confirmation email is sent via SendGrid with a “Thank you” message
-- Email subject: `Thank you for contacting BrainyBucks Consultants`
-- Custom email HTML used to match brand look
-
----
-
-## 📱 07. Screens Overview
-
-| Page | Description |
-|------|-------------|
-| `index.html` | Homepage with nav, footer, call-to-action |
-| `signup.html` | Registration + Login with email verification |
-| `thankyou.html` | Post-signup verification page |
-| `profile.html` | Authenticated user profile |
-| `events.html` | Public list of events (join only if verified) |
-| `admin-events.html` | Admin-only page to manage events |
-| `contact.html` | Contact form integrated with Firestore + SendGrid |
-
----
-
-## 🧪 08. Testing & Validation
-
-- ✅ Manual testing for all user journeys: sign up, verify, log in, join events
-- ✅ Admin CRUD (event create/edit/delete)
-- ✅ Form validation on all fields (signup, contact form)
-- ✅ Firebase rules tested:
-  - Only authenticated users can join events
-  - Only admin (email-based) can create/edit/delete events
-
----
-
-## 🗃️ 09. Folder Structure
-
+### Signup Flow (auth.js)
+```js
+createUserWithEmailAndPassword(auth, email, password)
+  .then((userCredential) => {
+    const user = userCredential.user;
+    sendEmailVerification(user);
+    alert("Verification email sent. Please verify your email before logging in.");
+  });
 ```
-BrainyBucks/
-├── index.html
-├── signup.html
-├── profile.html
-├── contact.html
-├── events.html
-├── admin-events.html
-├── scripts/
-│   ├── auth.js
-│   ├── profile.js
-│   ├── events.js
-│   └── contact.js
-├── css/
-│   ├── global.css
-│   ├── navbar.css
-│   ├── footer.css
-├── assets/
-│   ├── Logos/
-│   ├── footer/
-│   └── favicon_io/
-├── server/
-│   └── sendEmail.js (Node.js + SendGrid)
-├── firebase.js
-└── README.md
+
+### Email Verification Check (events.html)
+```js
+onAuthStateChanged(auth, (user) => {
+        if (user && user.emailVerified) {
+            // User is logged in, hide the login prompt
+            if (loginPrompt) {
+                loginPrompt.style.display = "none";
+            }
+        } else {
+            // User is not logged in, show the login prompt
+            if (loginPrompt) {
+                loginPrompt.style.display = "block";
+            }
+        }
+    });
+```
+```js
+// signup.js
+import { createUserWithEmailAndPassword, sendEmailVerification } from "firebase/auth";
+import { doc, setDoc } from "firebase/firestore";
+import { auth, db } from "./firebase.js";
+
+async function handleSignup(name, email, phone, password) {
+  const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+  const user = userCredential.user;
+
+  await sendEmailVerification(user);
+  await setDoc(doc(db, "users", user.uid), {
+    name,
+    email,
+    phone,
+    createdAt: new Date()
+  });
+
+  alert("Verification email sent! Please verify before logging in.");
+}
+```
+```js
+// events.html
+const adminEmail = "shenukagunathilake7@gmail.com";
+if (auth.currentUser?.email === adminEmail) {
+  document.getElementById("addEventForm").style.display = "block";
+  // Show edit/delete buttons
+}
+
+
 ```
 
 ---
 
-## 📦 10. Dependencies
+## 🔓 05. Admin Role Handling
 
-| Tool | Purpose |
-|------|---------|
-| Firebase | Auth, Firestore, Storage |
-| SendGrid | Email service |
-| Bootstrap 5 | Styling |
-| Tailwind (optional) | Utility classes |
-| Node.js | Backend for email sending |
-| Express.js | API routes for secure communication |
+### Only Admin Can See Signups/Edit/Delete
+```js
+const adminEmail = "shenukagunathilake7@gmail.com";
+isAdmin = currentUser.email === adminEmail;
+if (isAdmin) {
+          const adminBtns = document.createElement("div");
+          adminBtns.className = "admin-controls m-3";
+          adminBtns.innerHTML = `
+            <button class="btn btn-warning btn-sm edit-btn">Edit</button>
+            <button class="btn btn-danger btn-sm delete-btn">Delete</button>
+            <button class="btn btn-secondary btn-sm cancel-edit-btn" style="display:none;">Cancel</button>
+            <button class="btn btn-success btn-sm save-btn" style="display:none;">Save</button>
+          `;
+
+          const editBtn = adminBtns.querySelector(".edit-btn");
+          const deleteBtn = adminBtns.querySelector(".delete-btn");
+          const cancelEditBtn = adminBtns.querySelector(".cancel-edit-btn");
+          const saveBtn = adminBtns.querySelector(".save-btn");
+```
 
 ---
 
-## 🧾 11. Conclusion
+## 📨 06. SendGrid Email Function (Cloud Function)
 
-The BrainyBucks project offers a real-world web experience with full-stack features like authentication, CRUD operations, and email communication. With modern UI and backend integrations, it’s a functional financial empowerment platform for students. It successfully integrates event handling, contact forms, and cloud function automation.
+### Event Signup Email Function
+```js
+exports.sendConfirmationEmail = functions.https.onCall(async (data, context) => {
+  const { email, name, eventTitle } = data;
+  const msg = {
+    to: email,
+    from: 'shenukagunathilake5@gmail.com',
+    subject: `You're signed up for ${eventTitle}!`,
+    html: \`<h2>Hello \${name || 'there'},</h2><p>🎉 Thank you for signing up for <strong>\${eventTitle}</strong>.</p>\`
+  };
+  await sgMail.send(msg);
+});
+```
+
+### Contact Form Email Function
+```js
+exports.sendContactConfirmation = functions.https.onCall(async (data, context) => {
+  const { email, name } = data;
+  const msg = {
+    to: email,
+    from: 'shenukagunathilake5@gmail.com',
+    subject: "Thank you for contacting BrainyBucks Consultants",
+    html: \`<h2>Hello \${name},</h2><p>🎉 Thank you for contacting <strong>BrainyBucks Consultants</strong>. A team member will reach out to you shortly.</p>\`
+  };
+  await sgMail.send(msg);
+});
+```
 
 ---
+
+## 🗂️ 07. Firestore Collections
+
+- `users/`
+- `events/`
+- `events/{eventId}/signups/`
+- `contactSubmissions/`
+
+```js
+// Firestore.rules
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    
+    match /users/{userId} {
+  allow read, write: if request.auth != null && request.auth.uid == userId;
+}
+
+    
+    
+    // Events: All users can read, only you (admin) can write
+    match /events/{eventId} {
+      allow read: if true;
+      allow write: if request.auth != null &&
+                    request.auth.token.email == "shenukagunathilake7@gmail.com";
+    }
+
+    // Event Signups: Each user can manage their own
+    match /eventSignups/{userId}/events/{eventId} {
+      allow read, write: if request.auth != null && request.auth.uid == userId;
+    }
+    
+    match /events/{eventId}/signups/{signupId} {
+      allow read: if request.auth != null;
+    }
+    
+    match /events/{eventId}/signups/{userId} {
+  allow read, write: if request.auth != null && request.auth.uid == userId;
+}
+
+
+    // User Profiles: Only self-access
+    match /users/{userId} {
+      allow read, update: if request.auth != null && request.auth.uid == userId;
+    }
+
+    // Deny everything else
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}
+
+```
+
+---
+
+## 📸 08. Screenshot Examples
+
+```markdown
+<img src="images/readme/firestore-structure.png" width="400"/>
+<img src="images/readme/sendgrid-email.png" width="400"/>
+```
+
+---
+
+## 🧪 09. Testing & Validation
+
+- ✅ Signup + email verification
+- ✅ Authenticated profile page
+- ✅ Admin-only event CRUD
+- ✅ Event join restrictions + confirmation email
+- ✅ Contact form email + Firestore
+
+---
+
+## 🧾 10. Conclusion
+
+The BrainyBucks project offers a real-world financial platform with verified login, dynamic events, and instant communications. Built for student empowerment.
+
