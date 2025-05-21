@@ -1,0 +1,6 @@
+{
+    "platform": "gcfv1",
+    "entryPoint": "sendConfirmationEmail"
+  }
+  
+  
