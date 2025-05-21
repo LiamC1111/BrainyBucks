@@ -6,6 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap" rel="stylesheet" />
+  <script src="https://cdn.sheetjs.com/xlsx-latest/package/dist/xlsx.full.min.js"></script>
+
   <style>
     body {
       font-family: 'Quicksand', sans-serif;
@@ -167,6 +169,24 @@
       XLSX.writeFile(wb, "brainybucks_signups.xlsx");
     });
   </script>
+<script>
+  document.getElementById("exportBtn").addEventListener("click", () => {
+    const tables = document.querySelectorAll("#signupTables .event-section table");
+    if (!tables.length) return alert("No data to export.");
+
+    const wb = XLSX.utils.book_new();
+
+    tables.forEach((table, index) => {
+      const caption = table.querySelector("caption")?.innerText || `Event${index + 1}`;
+      const ws = XLSX.utils.table_to_sheet(table);
+      XLSX.utils.book_append_sheet(wb, ws, caption.substring(0, 31)); // max 31 chars
+    });
+
+    XLSX.writeFile(wb, "brainybucks_signups.xlsx");
+  });
+</script>
+
+
 </body>
 </html>
     
