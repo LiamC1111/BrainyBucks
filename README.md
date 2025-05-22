@@ -63,14 +63,63 @@ This platform brings together Firebase Authentication, Firestore, and SendGrid w
 
 ## 🔐 04. Firebase Authentication & Verification
 
-### Signup Flow (auth.js)
+### Signup Flow (signup.html)
 ```js
-createUserWithEmailAndPassword(auth, email, password)
-  .then((userCredential) => {
-    const user = userCredential.user;
-    sendEmailVerification(user);
-    alert("Verification email sent. Please verify your email before logging in.");
+document.addEventListener("DOMContentLoaded", () => {
+    const signupForm = document.getElementById("signup-form");
+    const verifiedBtn = document.getElementById("verified-button");
+
+    if (!signupForm || !verifiedBtn) {
+      alert("Missing form or verified button");
+      return;
+    }
+
+    signupForm.addEventListener("submit", (e) => {
+      e.preventDefault();
+
+      // Clear form + simulate signup
+      signupForm.reset();
+      signupForm.style.display = "none";
+      verifiedBtn.style.display = "block";
+
+      alert("✅ Verification email sent. Please check your inbox.");
+    });
+
+    verifiedBtn.addEventListener("click", () => {
+      // ✅ Redirect here
+      location.href = "thankyou.html";
+    });
   });
+```
+### Login Flow (Login.html)
+
+```js
+  import { auth } from './firebase.js';
+    import { signInWithEmailAndPassword } from 'https://www.gstatic.com/firebasejs/9.6.1/firebase-auth.js';
+
+    const loginForm = document.getElementById("login-form");
+    const errorMsg = document.getElementById("error-msg");
+
+    loginForm.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      errorMsg.innerText = "";
+
+      const email = document.getElementById("login-email").value.trim();
+      const password = document.getElementById("login-password").value.trim();
+
+      try {
+        const userCredential = await signInWithEmailAndPassword(auth, email, password);
+        await userCredential.user.reload();
+
+        if (!userCredential.user.emailVerified) {
+          errorMsg.innerText = "Email not verified. Please check your inbox.";
+        } else {
+          window.location.href = "profile.html";
+        }
+      } catch (error) {
+        errorMsg.innerText = "Login failed: " + error.message;
+      }
+    });
 ```
 
 ### Email Verification Check (events.html)
@@ -238,8 +287,13 @@ service cloud.firestore {
 ## 📸 08. Screenshot Examples
 
 ```markdown
-<img src="images/readme/firestore-structure.png" width="400"/>
-<img src="images/readme/sendgrid-email.png" width="400"/>
+<img src="/assets/readme/authentication.png" width="400"/>
+<img src="/assets/readme/acctverification.png" width="400"/>
+<img src="/assets/readme/tables.png" width="400"/>
+<img src="/assets/readme/sendgrid.png" width="400"/>
+<img src="/assets/readme/eventsignup.png" width="400"/>
+<img src="/assets/readme/sendgrid2.png" width="400"/>
+<img src="/assets/readme/contactemail.png" width="400"/>
 ```
 
 ---
