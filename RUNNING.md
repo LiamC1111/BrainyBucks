@@ -22,7 +22,7 @@
 
 5. **Notes:**
    - All Vite build, cache, and environment files are git-ignored to prevent conflicts.
-   - If you encounter issues, delete the `node_modules` and `.vite` folders, then run `npm install` again.
+   - If you encounter issues, delete the `node_modules`, `.vite` amd `package-lock.json` folders, then run `npm install` again.
 
 ---
 
