@@ -287,13 +287,7 @@ service cloud.firestore {
 ## 📸 08. Screenshot Examples
 
 ```markdown
-<img src="/assets/readme/authentication.png" width="400"/>
-<img src="/assets/readme/acctverification.png" width="400"/>
-<img src="/assets/readme/tables.png" width="400"/>
-<img src="/assets/readme/sendgrid.png" width="400"/>
-<img src="/assets/readme/eventsignup.png" width="400"/>
-<img src="/assets/readme/sendgrid2.png" width="400"/>
-<img src="/assets/readme/contactemail.png" width="400"/>
+<img src="/assets/images/acctverification.png" alt="Firebase Collections" style="width: 100%; height: auto;">
 ```
 
 ---
