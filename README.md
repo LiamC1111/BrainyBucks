@@ -283,7 +283,24 @@ service cloud.firestore {
 ```
 
 ---
+#### Firebase
+<img src="images/authentication.png" alt="Firebase Collections" style="width: 100%; height: auto;">
+<img src="images/dbstructure.png" alt="Firebase Collections" style="width: 100%; height: auto;">
+<img src="images/rules.png" alt="Firebase Collections" style="width: 100%; height: auto;">
 
+#### Email Notifications 
+<img src="images/acctverify.png" alt="Firebase Collections" style="width: 100%; height: auto;">
+<img src="images/eventsignup.png" alt="Firebase Collections" style="width: 100%; height: auto;">
+<img src="images/contact.png" alt="Firebase Collections" style="width: 100%; height: auto;">
+
+#### SendGrid email activity feed and Dashboard
+<img src="images/sendgrid.png" alt="Firebase Collections" style="width: 100%; height: auto;">
+<img src="images/dashboard.png" alt="Firebase Collections" style="width: 100%; height: auto;">
+
+
+
+
+---
 
 ## 🧪 09. Testing & Validation
 
