@@ -46,7 +46,7 @@ This platform brings together Firebase Authentication, Firestore, and SendGrid w
 <video controls src="https://firebasestorage.googleapis.com/v0/b/brainybucks-d8c0f.firebasestorage.app/o/user.mp4?alt=media&token=76f1196c-5653-4744-af2e-d5a3e6d4a938" title="Title"></video>
 
 
-## Admin Login
+## Admin Login View
 
 <video controls src="https://firebasestorage.googleapis.com/v0/b/brainybucks-d8c0f.firebasestorage.app/o/admin.mp4?alt=media&token=fd4d2cc1-ac32-413c-8986-ed7069c4ece4" title="gs://brainybucks-d8c0f.firebasestorage.app/admin.mp4"></video>
 
