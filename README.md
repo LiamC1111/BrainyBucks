@@ -284,13 +284,6 @@ service cloud.firestore {
 
 ---
 
-## 📸 08. Screenshot Examples
-
-```markdown
-<img src="/assets/images/acctverification.png" alt="Firebase Collections" style="width: 100%; height: auto;">
-```
-
----
 
 ## 🧪 09. Testing & Validation
 
